@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="ac6f7c1e-cc86-4505-822f-e11390de738a" ChangeDateTime="03/24/2022 15:12:02">
+    <Property Name="ElementName" Value="[dbo].[t_Empleada].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Empleada]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Empleada" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="11575f91-a21d-4243-a084-588d4d9137ce" ChangeDateTime="03/24/2022 15:14:40">
+    <Property Name="ElementName" Value="[dbo].[t_Horario].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Horario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Horario" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e10c17ec-2bab-4f73-8334-bd7afd7fb603" ChangeDateTime="03/24/2022 15:15:07">
+    <Property Name="ElementName" Value="[dbo].[t_Horario].[HoraInicion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Horario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HoraInicio" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0d360ffc-2b1e-4aff-be0a-ee3e6b95fa09" ChangeDateTime="03/24/2022 15:17:09">
+    <Property Name="ElementName" Value="[dbo].[t_Tarea].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Tarea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Tarea" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8a723d26-8d10-4f61-a08c-f5e8f3560b04" ChangeDateTime="03/24/2022 15:19:25">
+    <Property Name="ElementName" Value="[dbo].[t_EmpleadaHorario].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_EmpleadaHorario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_EmpleadaHorario" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7789b5d5-3396-4272-b18f-7f027c694b64" ChangeDateTime="03/24/2022 15:24:04">
+    <Property Name="ElementName" Value="[dbo].[t_TareaHorario].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_TareaHorario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_TareaHorario" />
+  </Operation>
+</Operations>
