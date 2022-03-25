@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CuidadosModernos.Repository
+namespace CuidadosModernos.Business.Domain.Queries
 {
     public class Class1
     {

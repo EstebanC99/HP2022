@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCAD7EE7-6456-46FB-B994-8E2E12E4815D}</ProjectGuid>
+    <ProjectGuid>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CuidadosModernos.Repository</RootNamespace>
-    <AssemblyName>CuidadosModernos.Repository</AssemblyName>
+    <RootNamespace>Cross.ResourceAccess.Repository</RootNamespace>
+    <AssemblyName>Cross.ResourceAccess.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -45,7 +45,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,15 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicRepository.cs" />
-    <Compile Include="CuidadosModernosDbContext.cs" />
-    <Compile Include="CuidadosModernosDbContextConfiguration.cs" />
-    <Compile Include="CuidadosModernosDbContextFactory.cs" />
+    <Compile Include="DataAccessBase.cs" />
     <Compile Include="EntityLoaderRepository.cs" />
     <Compile Include="IBasicRepository.cs" />
+    <Compile Include="IDataAccessBase.cs" />
     <Compile Include="IEntityLoaderRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="SessionContextInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,17 +73,9 @@
       <Project>{6BFD3615-EBA5-41C9-B35C-848CC2E678BC}</Project>
       <Name>Cross.Business.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cross.ResourceAccess.Repository\Cross.ResourceAccess.Repository.csproj">
-      <Project>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</Project>
-      <Name>Cross.ResourceAccess.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Domain\CuidadosModernos.Business.Domain.csproj">
-      <Project>{94FB9A76-68D4-4839-B937-C61EB92EDB22}</Project>
-      <Name>CuidadosModernos.Business.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Repository.Config\CuidadosModernos.Repository.Config.csproj">
-      <Project>{97BBBE9E-94BF-4569-B992-0D4BC77B0BCF}</Project>
-      <Name>CuidadosModernos.Repository.Config</Name>
+    <ProjectReference Include="..\Cross.Crosscutting.Globalization\Cross.Crosscutting.Globalization.csproj">
+      <Project>{74316e56-2b93-404a-82f9-de4fd3cb77dc}</Project>
+      <Name>Cross.Crosscutting.Globalization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

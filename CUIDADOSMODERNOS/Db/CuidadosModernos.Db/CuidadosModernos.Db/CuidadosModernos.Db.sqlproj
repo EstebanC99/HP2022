@@ -62,7 +62,7 @@
     <Build Include="Tables\t_Empleada.sql" />
     <Build Include="Tables\t_Horario.sql" />
     <Build Include="Tables\t_Tarea.sql" />
-    <Build Include="Tables\t_EmpleadaHorario.sql" />
+    <Build Include="Tables\t_HorarioEmpleada.sql" />
     <Build Include="Tables\t_TareaHorario.sql" />
   </ItemGroup>
   <ItemGroup>
