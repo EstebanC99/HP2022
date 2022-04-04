@@ -44,7 +44,7 @@ namespace Cross.Business.Logic
         where TAggregate : Aggregate<TKey>
         where TRepository : IRepository<TAggregate, TKey>
     {
-        protected TAggregate Aggregate { get; private set; }
+        protected TAggregate Aggregate { get; set; }
 
         protected BusinessLogic(IDbContextScopeFactory dbContextScopeFactory, TAggregate aggregate, TRepository repository)
             : base(dbContextScopeFactory, repository)

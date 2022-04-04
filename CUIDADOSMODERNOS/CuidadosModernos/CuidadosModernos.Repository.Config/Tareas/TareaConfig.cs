@@ -11,7 +11,9 @@ namespace CuidadosModernos.Repository.Config.Tareas
 
             this.HasKey(m => m.ID).Property(m => m.ID).HasColumnName("ID_Tarea");
 
-            this.Property(m => m.Hora).IsRequired();
+            this.Property(m => m.HoraMinima).IsRequired();
+
+            this.Property(m => m.HoraMaxima).IsOptional();
         }
     }
 }

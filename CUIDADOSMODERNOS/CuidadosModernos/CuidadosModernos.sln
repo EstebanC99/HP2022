@@ -53,6 +53,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessService", "Business
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuidadosModernos.BusinessService.Interfaces", "CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj", "{22234ECC-A2E6-40EB-81C9-7D0A857023C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cross.Crosscutting.Exceptions", "Cross.Crosscutting.Exceptions\Cross.Crosscutting.Exceptions.csproj", "{562A093D-5B29-42F1-B2F3-9EA0CF221F70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{ADA201FC-81F0-4AAF-B1E6-5829EE34DC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuidadosModernos.CrossCutting.Globalization", "CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj", "{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +121,14 @@ Global
 		{22234ECC-A2E6-40EB-81C9-7D0A857023C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22234ECC-A2E6-40EB-81C9-7D0A857023C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22234ECC-A2E6-40EB-81C9-7D0A857023C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562A093D-5B29-42F1-B2F3-9EA0CF221F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562A093D-5B29-42F1-B2F3-9EA0CF221F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562A093D-5B29-42F1-B2F3-9EA0CF221F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562A093D-5B29-42F1-B2F3-9EA0CF221F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,8 +157,12 @@ Global
 		{020A709C-B3C1-4420-AF91-37FDBFE00001} = {A5C6AE4C-7880-4DED-9F6B-2EB89A1BF3B2}
 		{89EB1A08-11C1-4536-BA24-B70FE00C1603} = {EB5C3FDC-E7E1-489B-821E-B57BD96D6391}
 		{22234ECC-A2E6-40EB-81C9-7D0A857023C9} = {89EB1A08-11C1-4536-BA24-B70FE00C1603}
+		{562A093D-5B29-42F1-B2F3-9EA0CF221F70} = {0FB92957-7B39-443F-837C-FB2969C3EF59}
+		{ADA201FC-81F0-4AAF-B1E6-5829EE34DC7B} = {EB5C3FDC-E7E1-489B-821E-B57BD96D6391}
+		{182F36D1-E6B0-4CD9-A8AE-72B78A198A94} = {ADA201FC-81F0-4AAF-B1E6-5829EE34DC7B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6F931EB-B129-4736-9228-E83488DEC69E}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

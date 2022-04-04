@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="BasicBusinessLogic.cs" />
     <Compile Include="BusinessLogic.cs" />
+    <Compile Include="Empleadas\RegistrarEmpleadaLogic.cs" />
+    <Compile Include="EntityLoaderLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +83,10 @@
     <ProjectReference Include="..\Cross.ResourceAccess.Repository\Cross.ResourceAccess.Repository.csproj">
       <Project>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</Project>
       <Name>Cross.ResourceAccess.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
+      <Project>{72538403-5E57-4FD6-BFB7-AB2AD2A3F62F}</Project>
+      <Name>CuidadosModernos.Business.Domain.Commands</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj">
       <Project>{22234ECC-A2E6-40EB-81C9-7D0A857023C9}</Project>

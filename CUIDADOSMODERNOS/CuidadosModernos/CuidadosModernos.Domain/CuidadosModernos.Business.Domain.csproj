@@ -41,19 +41,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\IEntityLoaderDomainService.cs" />
+    <Compile Include="Usuarios\Encargada.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="Generales\Empleada.cs" />
-    <Compile Include="Horarios\Horario.cs" />
-    <Compile Include="Horarios\HorarioEmpleada.cs" />
+    <Compile Include="Usuarios\Empleada.cs" />
+    <Compile Include="Estados\EstadoTareaEmpleada.cs" />
+    <Compile Include="Factories\Empledas\EmpleadaFactory.cs" />
+    <Compile Include="Factories\Empledas\IEmpleadaFactory.cs" />
+    <Compile Include="Turnos\Turno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\Tarea.cs" />
-    <Compile Include="Tareas\TareaHorario.cs" />
+    <Compile Include="Tareas\TareaEmpleada.cs" />
+    <Compile Include="Usuarios\Persona.cs" />
+    <Compile Include="ValueObjects\Empleadas\RegistrarEmpleada.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">
       <Project>{6BFD3615-EBA5-41C9-B35C-848CC2E678BC}</Project>
       <Name>Cross.Business.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cross.Crosscutting.Exceptions\Cross.Crosscutting.Exceptions.csproj">
+      <Project>{562A093D-5B29-42F1-B2F3-9EA0CF221F70}</Project>
+      <Name>Cross.Crosscutting.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj">
+      <Project>{182f36d1-e6b0-4cd9-a8ae-72b78a198a94}</Project>
+      <Name>CuidadosModernos.CrossCutting.Globalization</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

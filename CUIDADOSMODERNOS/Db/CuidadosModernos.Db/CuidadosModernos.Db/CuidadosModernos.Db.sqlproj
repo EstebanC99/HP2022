@@ -57,18 +57,25 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\PostDeployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\t_Empleada.sql" />
-    <Build Include="Tables\t_Horario.sql" />
+    <Build Include="Tables\t_Turno.sql" />
     <Build Include="Tables\t_Tarea.sql" />
-    <Build Include="Tables\t_HorarioEmpleada.sql" />
-    <Build Include="Tables\t_TareaHorario.sql" />
+    <Build Include="Tables\t_TareaEmpleada.sql" />
+    <Build Include="Tables\t_Encargada.sql" />
+    <Build Include="Tables\t_EstadoTareaEmpleada.sql" />
+    <None Include="Scripts\PostDeployment\t_EstadoTareaEmpleada.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="CuidadosModernos.Db.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CuidadosModernos.Db.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

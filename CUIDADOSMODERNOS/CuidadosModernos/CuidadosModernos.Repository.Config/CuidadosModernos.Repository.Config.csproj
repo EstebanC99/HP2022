@@ -52,12 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DummyConfig.cs" />
-    <Compile Include="Generales\EmpleadaConfig.cs" />
-    <Compile Include="Horarios\HorarioConfig.cs" />
-    <Compile Include="Horarios\HorarioEmpleadaConfig.cs" />
+    <Compile Include="Usuarios\EmpleadaConfig.cs" />
+    <Compile Include="Estados\EstadoTareaEmpleadaConfig.cs" />
+    <Compile Include="Turnos\TurnoConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\TareaConfig.cs" />
-    <Compile Include="Tareas\TareaHorarioConfig.cs" />
+    <Compile Include="Tareas\TareaEmpleadaConfig.cs" />
+    <Compile Include="Usuarios\EncargadaConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -59,6 +59,8 @@
     <Compile Include="CuidadosModernosDbContext.cs" />
     <Compile Include="CuidadosModernosDbContextConfiguration.cs" />
     <Compile Include="CuidadosModernosDbContextFactory.cs" />
+    <Compile Include="Empleadas\EmpleadaRepository.cs" />
+    <Compile Include="Empleadas\IEmpleadaRepository.cs" />
     <Compile Include="EntityLoaderRepository.cs" />
     <Compile Include="IBasicRepository.cs" />
     <Compile Include="IEntityLoaderRepository.cs" />
