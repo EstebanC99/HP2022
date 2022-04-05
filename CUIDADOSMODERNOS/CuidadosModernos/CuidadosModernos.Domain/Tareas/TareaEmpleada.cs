@@ -16,5 +16,11 @@ namespace CuidadosModernos.Domain.Tareas
 
         public int ID_Empleada { get; private set; }
 
+        public TareaEmpleada(Tarea tarea, EstadoTareaEmpleada estado)
+        {
+            this.Tarea = tarea;
+            this.Estado = estado;
+        }
+
     }
 }

@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="LaDescripcionNoPuedeEstarVacia" xml:space="preserve">
+    <value>La Descripcion no puede estar vacía.</value>
+  </data>
+  <data name="LaFechaHoraFinEsRequerida" xml:space="preserve">
+    <value>La Fecha Hora de Fin es Requerida.</value>
+  </data>
+  <data name="LaFechaHoraInicioEsRequerida" xml:space="preserve">
+    <value>La Fecha Hora de Inicio es Requerida.</value>
+  </data>
   <data name="LaPropiedadEsRequerida" xml:space="preserve">
     <value>El campo {0} es requerido.</value>
   </data>
   <data name="MailOTelefonoRequeridos" xml:space="preserve">
     <value>Es requerido un Mail o Telefono.</value>
+  </data>
+  <data name="NoSeEncontroLaEmpleada" xml:space="preserve">
+    <value>La Empleada seleccionada no pudo encontrarse.</value>
   </data>
   <data name="NoSeEncontroLaEncargadaParaLaEmpleada" xml:space="preserve">
     <value>No se encontro la Encargada para la Empleada.</value>

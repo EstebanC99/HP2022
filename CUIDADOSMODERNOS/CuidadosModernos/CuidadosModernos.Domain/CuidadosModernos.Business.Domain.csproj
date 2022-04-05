@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\Tareas\ITareaEmpleadaFactory.cs" />
+    <Compile Include="Factories\Tareas\ITareaFactory.cs" />
+    <Compile Include="Factories\Tareas\TareaEmpleadaFactory.cs" />
+    <Compile Include="Factories\Tareas\TareaFactory.cs" />
+    <Compile Include="Factories\Turnos\ITurnoFactory.cs" />
+    <Compile Include="Factories\Turnos\TurnoFactory.cs" />
     <Compile Include="Services\IEntityLoaderDomainService.cs" />
     <Compile Include="Usuarios\Encargada.cs" />
     <Compile Include="Entity.cs" />
@@ -54,6 +61,8 @@
     <Compile Include="Tareas\TareaEmpleada.cs" />
     <Compile Include="Usuarios\Persona.cs" />
     <Compile Include="ValueObjects\Empleadas\RegistrarEmpleada.cs" />
+    <Compile Include="ValueObjects\Tareas\RegistrarTarea.cs" />
+    <Compile Include="ValueObjects\Turnos\RegistrarTurno.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">
@@ -67,6 +76,10 @@
     <ProjectReference Include="..\CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj">
       <Project>{182f36d1-e6b0-4cd9-a8ae-72b78a198a94}</Project>
       <Name>CuidadosModernos.CrossCutting.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Global\CuidadosModernos.CrossCutting.Global.csproj">
+      <Project>{f9c25358-b9d7-48cc-a626-180f24b7d47e}</Project>
+      <Name>CuidadosModernos.CrossCutting.Global</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

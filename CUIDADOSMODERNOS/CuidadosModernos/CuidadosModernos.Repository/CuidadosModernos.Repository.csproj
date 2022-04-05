@@ -67,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="SessionContextInterceptor.cs" />
+    <Compile Include="Tareas\ITareaRepository.cs" />
+    <Compile Include="Tareas\TareaRepository.cs" />
+    <Compile Include="Turnos\ITurnoRepository.cs" />
+    <Compile Include="Turnos\TurnoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

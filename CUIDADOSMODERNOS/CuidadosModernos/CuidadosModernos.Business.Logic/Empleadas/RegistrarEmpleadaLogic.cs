@@ -1,6 +1,7 @@
 ﻿using Cross.Business.Logic;
 using CuidadosModernos.Business.Domain.Commands.Empleadas;
 using CuidadosModernos.BusinessService.Interfaces;
+using CuidadosModernos.BusinessService.Interfaces.Empleadas;
 using CuidadosModernos.Domain.Encargadas;
 using CuidadosModernos.Domain.Factories.Empledas;
 using CuidadosModernos.Domain.Generales;
@@ -10,7 +11,7 @@ using EntityFramework.DbContextScope.Interfaces;
 
 namespace CuidadosModernos.Business.Logic.Empleadas
 {
-    public class RegistrarEmpleadaLogic : BusinessLogic<Empleada, IEmpleadaRepository>
+    public class RegistrarEmpleadaLogic : BusinessLogic<Empleada, IEmpleadaRepository>, IRegistrarEmpleadaBusinessService
     {
         private IEmpleadaFactory EmpleadaFactory { get; set; }
 

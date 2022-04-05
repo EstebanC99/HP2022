@@ -43,6 +43,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -62,6 +63,9 @@
     <Compile Include="Empleadas\RegistrarEmpleadaLogic.cs" />
     <Compile Include="EntityLoaderLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tareas\AsignarTareaEmpleadaTurnoLogic.cs" />
+    <Compile Include="Tareas\RegistrarTareaLogic.cs" />
+    <Compile Include="Turnos\RegistrarTurnoLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,6 +84,10 @@
       <Project>{020A709C-B3C1-4420-AF91-37FDBFE00001}</Project>
       <Name>Cross.BusinessService.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cross.Crosscutting.Exceptions\Cross.Crosscutting.Exceptions.csproj">
+      <Project>{562A093D-5B29-42F1-B2F3-9EA0CF221F70}</Project>
+      <Name>Cross.Crosscutting.Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cross.ResourceAccess.Repository\Cross.ResourceAccess.Repository.csproj">
       <Project>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</Project>
       <Name>Cross.ResourceAccess.Repository</Name>
@@ -91,6 +99,10 @@
     <ProjectReference Include="..\CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj">
       <Project>{22234ECC-A2E6-40EB-81C9-7D0A857023C9}</Project>
       <Name>CuidadosModernos.BusinessService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj">
+      <Project>{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}</Project>
+      <Name>CuidadosModernos.CrossCutting.Globalization</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuidadosModernos.Domain\CuidadosModernos.Business.Domain.csproj">
       <Project>{94fb9a76-68d4-4839-b937-c61eb92edb22}</Project>

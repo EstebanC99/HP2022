@@ -87,6 +87,33 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'La Descripcion no puede estar vacía.'.
+        /// </summary>
+        public static string LaDescripcionNoPuedeEstarVacia {
+            get {
+                return ResourceManager.GetString(ResourceNames.LaDescripcionNoPuedeEstarVacia, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'La Fecha Hora de Fin es Requerida.'.
+        /// </summary>
+        public static string LaFechaHoraFinEsRequerida {
+            get {
+                return ResourceManager.GetString(ResourceNames.LaFechaHoraFinEsRequerida, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'La Fecha Hora de Inicio es Requerida.'.
+        /// </summary>
+        public static string LaFechaHoraInicioEsRequerida {
+            get {
+                return ResourceManager.GetString(ResourceNames.LaFechaHoraInicioEsRequerida, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'El campo {0} es requerido.'.
         /// </summary>
         public static string LaPropiedadEsRequerida {
@@ -101,6 +128,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         public static string MailOTelefonoRequeridos {
             get {
                 return ResourceManager.GetString(ResourceNames.MailOTelefonoRequeridos, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'La Empleada seleccionada no pudo encontrarse.'.
+        /// </summary>
+        public static string NoSeEncontroLaEmpleada {
+            get {
+                return ResourceManager.GetString(ResourceNames.NoSeEncontroLaEmpleada, _resourceCulture);
             }
         }
         
@@ -128,6 +164,21 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         public class ResourceNames {
             
             /// <summary>
+            /// Stores the resource name 'LaDescripcionNoPuedeEstarVacia'.
+            /// </summary>
+            public const string LaDescripcionNoPuedeEstarVacia = "LaDescripcionNoPuedeEstarVacia";
+            
+            /// <summary>
+            /// Stores the resource name 'LaFechaHoraFinEsRequerida'.
+            /// </summary>
+            public const string LaFechaHoraFinEsRequerida = "LaFechaHoraFinEsRequerida";
+            
+            /// <summary>
+            /// Stores the resource name 'LaFechaHoraInicioEsRequerida'.
+            /// </summary>
+            public const string LaFechaHoraInicioEsRequerida = "LaFechaHoraInicioEsRequerida";
+            
+            /// <summary>
             /// Stores the resource name 'LaPropiedadEsRequerida'.
             /// </summary>
             public const string LaPropiedadEsRequerida = "LaPropiedadEsRequerida";
@@ -136,6 +187,11 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             /// Stores the resource name 'MailOTelefonoRequeridos'.
             /// </summary>
             public const string MailOTelefonoRequeridos = "MailOTelefonoRequeridos";
+            
+            /// <summary>
+            /// Stores the resource name 'NoSeEncontroLaEmpleada'.
+            /// </summary>
+            public const string NoSeEncontroLaEmpleada = "NoSeEncontroLaEmpleada";
             
             /// <summary>
             /// Stores the resource name 'NoSeEncontroLaEncargadaParaLaEmpleada'.

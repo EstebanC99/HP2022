@@ -24,6 +24,8 @@ namespace CuidadosModernos.Domain.Generales
 
         public virtual Encargada Encargada { get; private set; }
 
+        #region Registrar Empleada
+
         public void Registrar(RegistrarEmpleada registrarEmpleada)
         {
             this.ValidarRegistrar(registrarEmpleada);
@@ -67,5 +69,19 @@ namespace CuidadosModernos.Domain.Generales
 
             validaciones.Throw();
         }
+
+        #endregion
+
+        #region Asignar Tarea
+
+        public void AsignarTarea(TareaEmpleada tareaEmpleada)
+        {
+            if (tareaEmpleada != null)
+            {
+                this.Tareas.Add(tareaEmpleada);
+            }
+        }
+
+        #endregion
     }
 }

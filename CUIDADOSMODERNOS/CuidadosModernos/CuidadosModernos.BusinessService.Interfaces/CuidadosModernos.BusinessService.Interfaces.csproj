@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empleadas\IRegistrarEmpleadaBusinessService.cs" />
     <Compile Include="IBasicBusinessService.cs" />
     <Compile Include="IEntityLoaderBusinessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tareas\IAsignarTareaEmpleadaTurnoBusinessService.cs" />
+    <Compile Include="Tareas\IRegistrarTareaBusinessService.cs" />
+    <Compile Include="Turnos\IRegistrarTurnoBusinessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">
@@ -53,6 +57,10 @@
     <ProjectReference Include="..\Cross.BusinessService.Interfaces\Cross.BusinessService.Interfaces.csproj">
       <Project>{020a709c-b3c1-4420-af91-37fdbfe00001}</Project>
       <Name>Cross.BusinessService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
+      <Project>{72538403-5E57-4FD6-BFB7-AB2AD2A3F62F}</Project>
+      <Name>CuidadosModernos.Business.Domain.Commands</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuidadosModernos.Domain\CuidadosModernos.Business.Domain.csproj">
       <Project>{94fb9a76-68d4-4839-b937-c61eb92edb22}</Project>
