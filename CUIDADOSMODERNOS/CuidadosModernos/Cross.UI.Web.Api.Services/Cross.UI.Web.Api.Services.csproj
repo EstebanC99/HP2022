@@ -5,14 +5,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AE30E73-D9F4-4102-A368-6DCBBB55662F}</ProjectGuid>
+    <ProjectGuid>{1C2E8249-B2D8-4339-B171-B5C881583D3D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CuidadosModernos.Business.Logic</RootNamespace>
-    <AssemblyName>CuidadosModernos.Business.Logic</AssemblyName>
+    <RootNamespace>Cross.UI.Web.Api.Services</RootNamespace>
+    <AssemblyName>Cross.UI.Web.Api.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -24,8 +25,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,21 +38,30 @@
     <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper.EF6, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.EF6.2.1.1\lib\net461\AutoMapper.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.28.0\lib\net45\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.28.0\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.DbContextScope, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.DbContextScope.1.0.0\lib\net46\EntityFramework.DbContextScope.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.Core.1.1.1\lib\net45\Mono.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,60 +71,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicBusinessLogic.cs" />
-    <Compile Include="BusinessLogic.cs" />
-    <Compile Include="Empleadas\RegistrarEmpleadaLogic.cs" />
-    <Compile Include="EntityLoaderLogic.cs" />
+    <Compile Include="ApiService.cs" />
+    <Compile Include="BasicApiService.cs" />
+    <Compile Include="IApiService.cs" />
+    <Compile Include="IBasicApiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tareas\AsignarTareaEmpleadaTurnoLogic.cs" />
-    <Compile Include="Tareas\RegistrarTareaLogic.cs" />
-    <Compile Include="Turnos\RegistrarTurnoLogic.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">
-      <Project>{6bfd3615-eba5-41c9-b35c-848cc2e678bc}</Project>
+      <Project>{6BFD3615-EBA5-41C9-B35C-848CC2E678BC}</Project>
       <Name>Cross.Business.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cross.Business.Logic\Cross.Business.Logic.csproj">
-      <Project>{44c10290-9940-4e44-a3a4-b768b687a7a3}</Project>
-      <Name>Cross.Business.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cross.BusinessService.Interfaces\Cross.BusinessService.Interfaces.csproj">
       <Project>{020A709C-B3C1-4420-AF91-37FDBFE00001}</Project>
       <Name>Cross.BusinessService.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cross.Crosscutting.Exceptions\Cross.Crosscutting.Exceptions.csproj">
-      <Project>{562A093D-5B29-42F1-B2F3-9EA0CF221F70}</Project>
-      <Name>Cross.Crosscutting.Exceptions</Name>
+    <ProjectReference Include="..\Cross.UI.Web.Models\Cross.UI.Web.Models.csproj">
+      <Project>{6DF91254-760B-4462-B540-3AE3A8FBA3D4}</Project>
+      <Name>Cross.UI.Web.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cross.ResourceAccess.Repository\Cross.ResourceAccess.Repository.csproj">
-      <Project>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</Project>
-      <Name>Cross.ResourceAccess.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
-      <Project>{72538403-5E57-4FD6-BFB7-AB2AD2A3F62F}</Project>
-      <Name>CuidadosModernos.Business.Domain.Commands</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj">
-      <Project>{22234ECC-A2E6-40EB-81C9-7D0A857023C9}</Project>
-      <Name>CuidadosModernos.BusinessService.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj">
-      <Project>{182F36D1-E6B0-4CD9-A8AE-72B78A198A94}</Project>
-      <Name>CuidadosModernos.CrossCutting.Globalization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Domain\CuidadosModernos.Business.Domain.csproj">
-      <Project>{94fb9a76-68d4-4839-b937-c61eb92edb22}</Project>
-      <Name>CuidadosModernos.Business.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Repository\CuidadosModernos.ResourceAccess.Repository.csproj">
-      <Project>{bcad7ee7-6456-46fb-b994-8e2e12e4815d}</Project>
-      <Name>CuidadosModernos.ResourceAccess.Repository</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

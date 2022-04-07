@@ -8,8 +8,8 @@
     <ProjectGuid>{97BBBE9E-94BF-4569-B992-0D4BC77B0BCF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CuidadosModernos.Repository.Config</RootNamespace>
-    <AssemblyName>CuidadosModernos.Repository.Config</AssemblyName>
+    <RootNamespace>CuidadosModernos.ResourceAccess.Repository.Config</RootNamespace>
+    <AssemblyName>CuidadosModernos.ResourceAccess.Repository.Config</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -24,6 +24,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

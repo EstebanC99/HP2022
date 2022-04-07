@@ -8,8 +8,8 @@
     <ProjectGuid>{BCAD7EE7-6456-46FB-B994-8E2E12E4815D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CuidadosModernos.Repository</RootNamespace>
-    <AssemblyName>CuidadosModernos.Repository</AssemblyName>
+    <RootNamespace>CuidadosModernos.ResourceAccess.Repository</RootNamespace>
+    <AssemblyName>CuidadosModernos.ResourceAccess.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -24,6 +24,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,6 +52,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,17 +89,45 @@
       <Project>{6BFD3615-EBA5-41C9-B35C-848CC2E678BC}</Project>
       <Name>Cross.Business.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cross.Crosscutting.Exceptions\Cross.Crosscutting.Exceptions.csproj">
+      <Project>{562a093d-5b29-42f1-b2f3-9ea0cf221f70}</Project>
+      <Name>Cross.Crosscutting.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cross.CrossCutting.Mapping\Cross.CrossCutting.Mapping.csproj">
+      <Project>{65e0b7e9-6fd3-416a-b9aa-277e1cfbafb9}</Project>
+      <Name>Cross.CrossCutting.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cross.ResourceAccess.Repository\Cross.ResourceAccess.Repository.csproj">
       <Project>{391F37EF-E3AE-448E-A2C1-A14A77C01BB4}</Project>
       <Name>Cross.ResourceAccess.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cross.UI.Web.Models\Cross.UI.Web.Models.csproj">
+      <Project>{6df91254-760b-4462-b540-3ae3a8fba3d4}</Project>
+      <Name>Cross.UI.Web.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
+      <Project>{72538403-5e57-4fd6-bfb7-ab2ad2a3f62f}</Project>
+      <Name>CuidadosModernos.Business.Domain.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Queries\CuidadosModernos.Business.Domain.Queries.csproj">
+      <Project>{b409cd89-d69b-4cab-ae32-58d82a0d9437}</Project>
+      <Name>CuidadosModernos.Business.Domain.Queries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Exceptions\CuidadosModernos.CrossCutting.Globalization.csproj">
+      <Project>{182f36d1-e6b0-4cd9-a8ae-72b78a198a94}</Project>
+      <Name>CuidadosModernos.CrossCutting.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.CrossCutting.Global\CuidadosModernos.CrossCutting.Global.csproj">
+      <Project>{f9c25358-b9d7-48cc-a626-180f24b7d47e}</Project>
+      <Name>CuidadosModernos.CrossCutting.Global</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuidadosModernos.Domain\CuidadosModernos.Business.Domain.csproj">
       <Project>{94FB9A76-68D4-4839-B937-C61EB92EDB22}</Project>
       <Name>CuidadosModernos.Business.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CuidadosModernos.Repository.Config\CuidadosModernos.Repository.Config.csproj">
+    <ProjectReference Include="..\CuidadosModernos.Repository.Config\CuidadosModernos.ResourceAccess.Repository.Config.csproj">
       <Project>{97BBBE9E-94BF-4569-B992-0D4BC77B0BCF}</Project>
-      <Name>CuidadosModernos.Repository.Config</Name>
+      <Name>CuidadosModernos.ResourceAccess.Repository.Config</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CuidadosModernos.ResourceAccess.Repository.Config")]
+[assembly: AssemblyTitle("Cross.UI.Web.Api.Services")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CuidadosModernos.ResourceAccess.Repository.Config")]
+[assembly: AssemblyProduct("Cross.UI.Web.Api.Services")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("97bbbe9e-94bf-4569-b992-0d4bc77b0bcf")]
+[assembly: Guid("1c2e8249-b2d8-4339-b171-b5c881583d3d")]
 
 // Version information for an assembly consists of the following four values:
 //

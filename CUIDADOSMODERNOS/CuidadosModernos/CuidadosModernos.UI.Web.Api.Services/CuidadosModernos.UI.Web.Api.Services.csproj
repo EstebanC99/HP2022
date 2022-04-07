@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06983558-5B95-4E7C-85C1-81FC0F1E46E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CuidadosModernos.UI.Web.Api.Services</RootNamespace>
+    <AssemblyName>CuidadosModernos.UI.Web.Api.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Empleadas\IRegistrarEmpleadaApiService.cs" />
+    <Compile Include="Empleadas\RegistrarEmpleadaApiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Cross.BusinessService.Interfaces\Cross.BusinessService.Interfaces.csproj">
+      <Project>{020A709C-B3C1-4420-AF91-37FDBFE00001}</Project>
+      <Name>Cross.BusinessService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cross.CrossCutting.Mapping\Cross.CrossCutting.Mapping.csproj">
+      <Project>{65E0B7E9-6FD3-416A-B9AA-277E1CFBAFB9}</Project>
+      <Name>Cross.CrossCutting.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cross.UI.Web.Api.Services\Cross.UI.Web.Api.Services.csproj">
+      <Project>{1C2E8249-B2D8-4339-B171-B5C881583D3D}</Project>
+      <Name>Cross.UI.Web.Api.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cross.UI.Web.Models\Cross.UI.Web.Models.csproj">
+      <Project>{6DF91254-760B-4462-B540-3AE3A8FBA3D4}</Project>
+      <Name>Cross.UI.Web.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
+      <Project>{72538403-5E57-4FD6-BFB7-AB2AD2A3F62F}</Project>
+      <Name>CuidadosModernos.Business.Domain.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj">
+      <Project>{22234ECC-A2E6-40EB-81C9-7D0A857023C9}</Project>
+      <Name>CuidadosModernos.BusinessService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.UI.Web.Models\CuidadosModernos.UI.Web.Models.csproj">
+      <Project>{1FBFA72E-62CD-4807-AF63-89528CEA117B}</Project>
+      <Name>CuidadosModernos.UI.Web.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

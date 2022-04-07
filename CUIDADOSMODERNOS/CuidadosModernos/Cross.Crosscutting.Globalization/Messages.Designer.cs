@@ -61,6 +61,24 @@ namespace Cross.Crosscutting.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot find a matching action..
+        /// </summary>
+        public static string CannotFindMatchingAction {
+            get {
+                return ResourceManager.GetString("CannotFindMatchingAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple matches found..
+        /// </summary>
+        public static string MultipleMatchesFound {
+            get {
+                return ResourceManager.GetString("MultipleMatchesFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No se encontro el ambiente. Esto se debe a que el llamado al repositorio se hizo fuera del contexto..
         /// </summary>
         public static string NoAmbientDbContextLocator {
