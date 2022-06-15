@@ -15,6 +15,7 @@ namespace CuidadosModernos.Repository.Config.Usuarios
             this.Property(m => m.Apellido).IsRequired();
             this.Property(m => m.DNI).IsRequired();
 
+            this.Ignore(i => i.Descripcion);
         }
     }
 }

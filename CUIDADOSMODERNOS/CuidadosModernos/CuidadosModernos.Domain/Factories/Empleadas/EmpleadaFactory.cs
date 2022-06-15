@@ -1,4 +1,5 @@
-﻿using CuidadosModernos.Domain.Generales;
+﻿using CuidadosModernos.Domain.Usuarios;
+using CuidadosModernos.Domain.ValueObjects.Empleadas;
 
 namespace CuidadosModernos.Domain.Factories.Empledas
 {

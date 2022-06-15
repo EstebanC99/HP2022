@@ -64,18 +64,22 @@
     <Build Include="Tables\t_Empleada.sql" />
     <Build Include="Tables\t_Turno.sql" />
     <Build Include="Tables\t_Tarea.sql" />
-    <Build Include="Tables\t_TareaEmpleada.sql" />
+    <Build Include="Tables\t_Frecuencia.sql" />
     <Build Include="Tables\t_Encargada.sql" />
-    <Build Include="Tables\t_EstadoTareaEmpleada.sql" />
-    <None Include="Scripts\PostDeployment\t_EstadoTareaEmpleada.sql" />
+    <Build Include="Tables\t_EstadoTareaTurno.sql" />
+    <None Include="Scripts\PostDeployment\t_EstadoTareaTurno.sql" />
+    <None Include="Scripts\PostDeployment\t_Encargada.sql" />
+    <Build Include="Tables\t_Nota.sql" />
+    <Build Include="Tables\t_TareaTurno.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="CuidadosModernos.Db.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CuidadosModernos.Db.publish.xml" />
+    <None Include="Scripts\PostDeployment\t_Frecuencia.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment1.sql" />
+    <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

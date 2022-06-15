@@ -3,8 +3,12 @@ using CuidadosModernos.UI.Web.Models;
 
 namespace CuidadosModernos.UI.Web.Api.Services.Empleadas
 {
-    public interface IRegistrarEmpleadaApiService : IApiService
+    public interface IAdministrarEmpleadaApiService : IApiService
     {
         void RegistrarEmpleada(EmpleadaDetalleVM empleadaDetalleVM);
+
+        void ModificarEmpleada(EmpleadaDetalleVM empleadaDetalleVM);
+
+        void EliminarEmpleada(EmpleadaDetalleVM empleadaDetalleVM);
     }
 }

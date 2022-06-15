@@ -9,4 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-:r .\t_EstadoTareaEmpleada.sql
+:r .\t_EstadoTareaTurno.sql
+:r .\t_Encargada.sql
+:r .\t_Frecuencia.sql

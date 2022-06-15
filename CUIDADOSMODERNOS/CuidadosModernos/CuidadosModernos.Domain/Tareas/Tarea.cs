@@ -10,34 +10,69 @@ namespace CuidadosModernos.Domain.Tareas
     {
         public string Descripcion { get; private set; }
 
-        public virtual TimeSpan HoraMinima { get; private set; }
+        public virtual TimeSpan HoraRealizacion { get; private set; }
 
-        public virtual TimeSpan? HoraMaxima { get; private set; }
+        public virtual DateTime FechaInicioVigencia { get; private set; }
+
+        public virtual DateTime? FechaFinVigencia { get; private set; }
+
+        public virtual Frecuencia Frecuencia { get; private set; }
+
+        #region ABM
+
+        #region Registrar
 
         public void Registrar(RegistrarTarea registrarTarea)
         {
             this.ValidarRegistrar(registrarTarea);
 
-            this.Descripcion = registrarTarea.Descripcion;
-            this.HoraMinima = registrarTarea.HoraMinima;
-            this.HoraMaxima = registrarTarea.HoraMaxima;
+            this.GuardarTarea(registrarTarea);
         }
 
         private void ValidarRegistrar(RegistrarTarea registrarTarea)
         {
             var validaciones = new ValidationException();
 
-            if (string.IsNullOrEmpty(registrarTarea.Descripcion))
+            if (registrarTarea.HoraRealizacion == null || registrarTarea.HoraRealizacion == default)
             {
-                validaciones.AddValidationResult(Messages.LaDescripcionNoPuedeEstarVacia);
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(HoraRealizacion)));
             }
 
-            if (registrarTarea.HoraMinima == null || registrarTarea.HoraMinima == TimeSpan.Zero)
+            if (registrarTarea.FechaInicioVigencia == null || registrarTarea.FechaInicioVigencia == default)
             {
-                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarTarea.HoraMinima)));
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(FechaInicioVigencia)));
+            }
+
+            if (registrarTarea.Frecuencia == null)
+            {
+                validaciones.AddValidationResult(Messages.NoSeEncontroLaFrecuenciaElegida);
             }
 
             validaciones.Throw();
         }
+
+        #endregion
+
+        #region Modificar
+
+        public void Modificar(ModificarTarea modificarTarea)
+        {
+            this.ValidarRegistrar(modificarTarea);
+
+            this.GuardarTarea(modificarTarea);
+        }
+
+        #endregion
+
+        private void GuardarTarea(RegistrarTarea tarea)
+        {
+            this.Descripcion = tarea.Descripcion;
+            this.HoraRealizacion = tarea.HoraRealizacion;
+            this.FechaInicioVigencia = tarea.FechaInicioVigencia;
+            this.FechaFinVigencia = tarea.FechaFinVigencia;
+            this.Frecuencia = tarea.Frecuencia;
+        }
+
+        #endregion
     }
 }

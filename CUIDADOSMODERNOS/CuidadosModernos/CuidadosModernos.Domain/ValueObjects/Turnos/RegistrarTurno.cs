@@ -1,5 +1,5 @@
 ﻿using Cross.Business.Domain;
-using CuidadosModernos.Domain.Generales;
+using CuidadosModernos.Domain.Usuarios;
 using System;
 
 namespace CuidadosModernos.Domain.ValueObjects.Turnos

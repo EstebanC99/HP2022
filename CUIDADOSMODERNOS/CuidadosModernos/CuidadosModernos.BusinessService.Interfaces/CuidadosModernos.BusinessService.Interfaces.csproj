@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleadas\IRegistrarEmpleadaBusinessService.cs" />
+    <Compile Include="Empleadas\IAdministrarEmpleadaBusinessService.cs" />
     <Compile Include="IBasicBusinessService.cs" />
     <Compile Include="IEntityLoaderBusinessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

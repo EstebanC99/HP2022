@@ -1,0 +1,100 @@
+﻿using Cross.Business.Logic;
+using Cross.Crosscutting.Exceptions;
+using CuidadosModernos.Business.Domain.Commands.Empleadas;
+using CuidadosModernos.BusinessService.Interfaces;
+using CuidadosModernos.BusinessService.Interfaces.Empleadas;
+using CuidadosModernos.CrossCutting.Exceptions;
+using CuidadosModernos.Domain.Encargadas;
+using CuidadosModernos.Domain.Factories.Empledas;
+using CuidadosModernos.Domain.Usuarios;
+using CuidadosModernos.Domain.ValueObjects.Empleadas;
+using CuidadosModernos.Repository.Empleadas;
+using EntityFramework.DbContextScope.Interfaces;
+
+namespace CuidadosModernos.Business.Logic.Empleadas
+{
+    public class AdministrarEmpleadaLogic : BusinessLogic<Empleada, IEmpleadaRepository>, IAdministrarEmpleadaBusinessService
+    {
+        private IEmpleadaFactory EmpleadaFactory { get; set; }
+
+        private IEntityLoaderBusinessService EntityLoaderBusinessService { get; set; }
+
+        public AdministrarEmpleadaLogic(IDbContextScopeFactory dbContextScopeFactory,
+                                        Empleada aggregate,
+                                        IEmpleadaRepository repository,
+                                        IEmpleadaFactory empleadaFactory,
+                                        IEntityLoaderBusinessService entityLoaderBusinessService)
+            : base(dbContextScopeFactory, aggregate, repository)
+        {
+            this.EmpleadaFactory = empleadaFactory;
+            this.EntityLoaderBusinessService = entityLoaderBusinessService;
+        }
+
+        public void RegistrarEmpleada(RegistrarEmpleadaCommand command)
+        {
+            using (var context = this.DbContextScopeFactory.CreateWithTransaction())
+            {
+                var registrarEmpleada = this.MapearEmpleada(command);
+
+                this.Aggregate = this.EmpleadaFactory.CrearEmpleada();
+
+                this.Aggregate.Registrar(registrarEmpleada);
+
+                this.Repository.Add(this.Aggregate);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void ModificarEmpleada(ModificarEmpleadaCommand command)
+        {
+            using (var context  = this.DbContextScopeFactory.CreateWithTransaction())
+            {
+                this.Aggregate = this.Repository.GetByID(command.ID);
+
+                if (this.Aggregate == null)
+                {
+                    throw new ValidationException(Messages.NoSeEncontroLaEmpleada);
+                }
+
+                this.Aggregate.Modificar(this.MapearEmpleada(command));
+
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminarEmpleada(int empleadaID)
+        {
+            using (var context = this.DbContextScopeFactory.CreateWithTransaction())
+            {
+                this.Aggregate = this.Repository.GetByID(empleadaID);
+
+                if (this.Aggregate == null)
+                {
+                    throw new ValidationException(Messages.NoSeEncontroLaEmpleada);
+                }
+
+                this.Repository.Remove(empleadaID);
+
+                context.SaveChanges();
+            }
+        }
+
+        private ModificarEmpleada MapearEmpleada(RegistrarEmpleadaCommand command)
+        {
+            var registrarEmpleada = new ModificarEmpleada();
+
+            registrarEmpleada.Nombre = command.Nombre;
+            registrarEmpleada.Apellido = command.Apellido;
+            registrarEmpleada.DNI = command.DNI;
+            registrarEmpleada.Email = command.Email;
+            registrarEmpleada.Telefono = command.Telefono;
+            registrarEmpleada.Usuario = command.Usuario;
+            registrarEmpleada.Password = command.Password;
+
+            registrarEmpleada.Encargada = this.EntityLoaderBusinessService.GetByID<Encargada>(command.EncargadaID);
+
+            return registrarEmpleada;
+        }
+    }
+}

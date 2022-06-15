@@ -15,7 +15,7 @@ namespace Cross.ResourceAccess.Repository
             {
                 var dbContext = this.ambientDbContextLocator.Get<TDbContext>();
 
-                if (DbContext == null)
+                if (dbContext == null)
                     throw new InvalidOperationException(Messages.NoAmbientDbContextLocator);
 
                 return dbContext;

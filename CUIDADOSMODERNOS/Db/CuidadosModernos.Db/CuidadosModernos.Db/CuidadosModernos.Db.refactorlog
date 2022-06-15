@@ -112,4 +112,67 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID_EstadoTareaEmpleada" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="0ed6c7fc-912b-42df-a218-bd5ef692244b" ChangeDateTime="06/14/2022 21:06:21">
+    <Property Name="ElementName" Value="[dbo].[t_Empleada].[Mail]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Empleada]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Email" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9760f5d4-691c-4009-a0ad-2f0b76882ed4" ChangeDateTime="06/14/2022 21:08:13">
+    <Property Name="ElementName" Value="[dbo].[t_Nota].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Nota]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Nota" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f887673f-c68f-4c88-a4fb-24853338d6c6" ChangeDateTime="06/14/2022 21:12:17">
+    <Property Name="ElementName" Value="[dbo].[t_Tarea].[HoraMinima]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Tarea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HoraRealizacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c9163796-2566-438e-baa4-58ecdc99b5d8" ChangeDateTime="06/14/2022 21:12:29">
+    <Property Name="ElementName" Value="[dbo].[t_Tarea].[HoraMaxima]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Tarea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FechaInicioVigencia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b3731c1e-809c-4d2a-8a58-f1cc3711b737" ChangeDateTime="06/14/2022 21:13:31">
+    <Property Name="ElementName" Value="[dbo].[t_TareaHorario].[ID_TareaEmpleada]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_TareaHorario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Frecuencia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fac7335a-e1fe-44c8-a037-3fce7370b87d" ChangeDateTime="06/14/2022 21:13:52">
+    <Property Name="ElementName" Value="[dbo].[t_TareaHorario].[ID_Tarea]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_TareaHorario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Descripcion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b635911a-ded3-4cf4-af9b-d30e8d549c8f" ChangeDateTime="06/14/2022 21:17:01">
+    <Property Name="ElementName" Value="[dbo].[t_Horario].[ID_Empleada]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Horario]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FechaHoraInicio" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="10db8d40-9e04-4f01-a568-98e2c5439c42" ChangeDateTime="06/14/2022 21:20:25">
+    <Property Name="ElementName" Value="[dbo].[t_EstadoTareaEmpleada].[ID_EstadoTareaEmpleada]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_EstadoTareaEmpleada]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_EstadoTareaTurno" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8651f39b-8341-48bb-8b4b-f7ae6ec8d392" ChangeDateTime="06/14/2022 21:21:35">
+    <Property Name="ElementName" Value="[dbo].[t_TareaTurno].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_TareaTurno]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_TareaTurno" />
+  </Operation>
 </Operations>

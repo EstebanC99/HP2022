@@ -41,8 +41,6 @@ namespace CuidadosModernos.Business.Logic.Tareas
             var registrarTarea = new RegistrarTarea();
 
             registrarTarea.Descripcion = command.Descripcion;
-            registrarTarea.HoraMinima = command.HoraMinima;
-            registrarTarea.HoraMaxima = command.HoraMaxima;
 
             return registrarTarea;
         }

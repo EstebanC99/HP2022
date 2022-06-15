@@ -14,9 +14,5 @@ namespace CuidadosModernos.Repository
 
         }
 
-        public List<Tarea> ObtenerTareasPorHora(TimeSpan horaInicio, TimeSpan horaFin)
-        {
-            return this.DbSet.Where(t => (t.HoraMinima <= horaInicio && t.HoraMaxima >= horaInicio) || (t.HoraMinima <= horaFin && t.HoraMaxima >= horaFin)).ToList();
-        }
     }
 }

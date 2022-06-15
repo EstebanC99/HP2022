@@ -138,4 +138,7 @@
   <data name="NoSeEncontroLaEncargadaParaLaEmpleada" xml:space="preserve">
     <value>No se encontro la Encargada para la Empleada.</value>
   </data>
+  <data name="NoSeEncontroLaFrecuenciaElegida" xml:space="preserve">
+    <value>No se encontro la Frecuencia elegida.</value>
+  </data>
 </root>

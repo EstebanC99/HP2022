@@ -1,5 +1,5 @@
 ﻿using Cross.ResourceAccess.Repository;
-using CuidadosModernos.Domain.Generales;
+using CuidadosModernos.Domain.Usuarios;
 
 namespace CuidadosModernos.Repository.Empleadas
 {

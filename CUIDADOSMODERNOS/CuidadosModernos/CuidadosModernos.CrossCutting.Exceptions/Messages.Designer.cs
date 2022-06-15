@@ -150,6 +150,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'No se encontro la Frecuencia elegida.'.
+        /// </summary>
+        public static string NoSeEncontroLaFrecuenciaElegida {
+            get {
+                return ResourceManager.GetString(ResourceNames.NoSeEncontroLaFrecuenciaElegida, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Formats a localized string similar to 'El campo {0} es requerido.'.
         /// </summary>
         /// <param name="arg0">An object (0) to format.</param>
@@ -197,6 +206,11 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             /// Stores the resource name 'NoSeEncontroLaEncargadaParaLaEmpleada'.
             /// </summary>
             public const string NoSeEncontroLaEncargadaParaLaEmpleada = "NoSeEncontroLaEncargadaParaLaEmpleada";
+            
+            /// <summary>
+            /// Stores the resource name 'NoSeEncontroLaFrecuenciaElegida'.
+            /// </summary>
+            public const string NoSeEncontroLaFrecuenciaElegida = "NoSeEncontroLaFrecuenciaElegida";
         }
     }
 }

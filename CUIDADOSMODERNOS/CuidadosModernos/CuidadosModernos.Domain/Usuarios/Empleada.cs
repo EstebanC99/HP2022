@@ -1,28 +1,34 @@
 ﻿using Cross.Business.Domain;
 using Cross.Crosscutting.Exceptions;
-using CuidadosModernos.Domain.Encargadas;
-using CuidadosModernos.Domain.Tareas;
-using CuidadosModernos.Domain.ValueObjects.Empleadas;
-using System.Collections.Generic;
 using CuidadosModernos.CrossCutting.Exceptions;
+using CuidadosModernos.Domain.Encargadas;
+using CuidadosModernos.Domain.ValueObjects.Empleadas;
 
-namespace CuidadosModernos.Domain.Generales
+namespace CuidadosModernos.Domain.Usuarios
 {
     public class Empleada : Aggregate<int>
     {
+        public Empleada()
+        {
+        }
+
         public string Nombre { get; private set; }
 
         public string Apellido { get; private set; }
 
         public virtual string DNI { get; private set; }
 
-        public string Mail { get; private set; }
+        public string Email { get; private set; }
 
         public string Telefono { get; private set; }
 
-        public virtual ICollection<TareaEmpleada> Tareas { get; private set; }
+        public string Usuario { get; private set; }
+
+        public string Password { get; private set; }
 
         public virtual Encargada Encargada { get; private set; }
+
+        #region ABM
 
         #region Registrar Empleada
 
@@ -30,11 +36,8 @@ namespace CuidadosModernos.Domain.Generales
         {
             this.ValidarRegistrar(registrarEmpleada);
 
-            this.Nombre = registrarEmpleada.Nombre;
-            this.Apellido = registrarEmpleada.Apellido;
-            this.DNI = registrarEmpleada.DNI;
-            this.Mail = registrarEmpleada.Mail;
-            this.Telefono = registrarEmpleada.Telefono;
+            this.GuardarEmpleada(registrarEmpleada);
+
             this.Encargada = registrarEmpleada.Encargada;
         }
 
@@ -57,7 +60,7 @@ namespace CuidadosModernos.Domain.Generales
                 validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarEmpleada.DNI)));
             }
 
-            if (string.IsNullOrEmpty(Mail) && string.IsNullOrEmpty(registrarEmpleada.Telefono))
+            if (string.IsNullOrEmpty(registrarEmpleada.Email) && string.IsNullOrEmpty(registrarEmpleada.Telefono))
             {
                 validaciones.AddValidationResult(Messages.MailOTelefonoRequeridos);
             }
@@ -72,16 +75,47 @@ namespace CuidadosModernos.Domain.Generales
 
         #endregion
 
-        #region Asignar Tarea
+        #region Modificar
 
-        public void AsignarTarea(TareaEmpleada tareaEmpleada)
+        public void Modificar(ModificarEmpleada modificarEmpleada)
         {
-            if (tareaEmpleada != null)
+            this.ValidarRegistrar(modificarEmpleada);
+            this.ValidarModificar(modificarEmpleada);
+
+            this.GuardarEmpleada(modificarEmpleada);
+        }
+
+        private void ValidarModificar(ModificarEmpleada modificarEmpleada)
+        {
+            var validaciones = new ValidationException();
+
+            if (string.IsNullOrEmpty(modificarEmpleada.Usuario))
             {
-                this.Tareas.Add(tareaEmpleada);
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Usuario)));
             }
+
+            if (string.IsNullOrEmpty(modificarEmpleada.Password))
+            {
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Password)));
+            }
+
+            validaciones.Throw();
         }
 
         #endregion
+
+        private void GuardarEmpleada(RegistrarEmpleada empleada)
+        {
+            this.Nombre = empleada.Nombre;
+            this.Apellido = empleada.Apellido;
+            this.DNI = empleada.DNI;
+            this.Email = empleada.Email;
+            this.Telefono = empleada.Telefono;
+            this.Usuario = empleada.Usuario;
+            this.Password = empleada.Password;
+        }
+
+        #endregion
+
     }
 }

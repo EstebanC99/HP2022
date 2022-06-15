@@ -65,10 +65,9 @@
   <ItemGroup>
     <Compile Include="BasicBusinessLogic.cs" />
     <Compile Include="BusinessLogic.cs" />
-    <Compile Include="Empleadas\RegistrarEmpleadaLogic.cs" />
+    <Compile Include="Empleadas\AdministrarEmpleadaLogic.cs" />
     <Compile Include="EntityLoaderLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tareas\AsignarTareaEmpleadaTurnoLogic.cs" />
     <Compile Include="Tareas\RegistrarTareaLogic.cs" />
     <Compile Include="Turnos\RegistrarTurnoLogic.cs" />
   </ItemGroup>

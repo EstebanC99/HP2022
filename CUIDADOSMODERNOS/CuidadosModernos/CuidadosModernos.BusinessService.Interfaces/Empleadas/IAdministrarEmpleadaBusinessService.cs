@@ -3,8 +3,12 @@ using CuidadosModernos.Business.Domain.Commands.Empleadas;
 
 namespace CuidadosModernos.BusinessService.Interfaces.Empleadas
 {
-    public interface IRegistrarEmpleadaBusinessService : IBusinessService
+    public interface IAdministrarEmpleadaBusinessService : IBusinessService
     {
         void RegistrarEmpleada(RegistrarEmpleadaCommand command);
+
+        void ModificarEmpleada(ModificarEmpleadaCommand command);
+
+        void EliminarEmpleada(int empleadaID);
     }
 }

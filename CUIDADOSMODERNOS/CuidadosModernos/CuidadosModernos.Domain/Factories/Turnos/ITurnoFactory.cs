@@ -1,5 +1,5 @@
-﻿using CuidadosModernos.Domain.Generales;
-using CuidadosModernos.Domain.Horarios;
+﻿using CuidadosModernos.Domain.Horarios;
+using CuidadosModernos.Domain.Usuarios;
 
 namespace CuidadosModernos.Domain.Factories.Turnos
 {

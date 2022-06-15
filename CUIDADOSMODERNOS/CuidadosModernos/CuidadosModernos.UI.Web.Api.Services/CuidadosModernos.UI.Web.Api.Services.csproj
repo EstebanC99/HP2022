@@ -47,8 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleadas\IRegistrarEmpleadaApiService.cs" />
-    <Compile Include="Empleadas\RegistrarEmpleadaApiService.cs" />
+    <Compile Include="Empleadas\IAdministrarEmpleadaApiService.cs" />
+    <Compile Include="Empleadas\AdministrarEmpleadaApiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -7,6 +7,5 @@ namespace CuidadosModernos.Repository
 {
     public interface ITareaRepository : IRepository<Tarea, int>
     {
-        List<Tarea> ObtenerTareasPorHora(TimeSpan horaInicio, TimeSpan horaFin);
     }
 }
