@@ -9,7 +9,7 @@ namespace CuidadosModernos.Repository
     {
         private const string DATA_BASE_COMMAND_TIMEOUT_KEY = "DataBaseCommandTimeout";
 
-        public CuidadosModernosDbContext() : base("Name=CuidadosModernos")
+        public CuidadosModernosDbContext() : base("Name=CuidadosModernosDb")
         {
             var commandTimeoutValue = System.Configuration.ConfigurationManager.AppSettings[DATA_BASE_COMMAND_TIMEOUT_KEY];
             int timeout;
