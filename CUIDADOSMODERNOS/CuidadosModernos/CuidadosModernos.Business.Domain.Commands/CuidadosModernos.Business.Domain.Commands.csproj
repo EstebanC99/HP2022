@@ -45,6 +45,7 @@
     <Compile Include="Empleadas\RegistrarEmpleadaCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\AsignarTareaEmpleadaCommand.cs" />
+    <Compile Include="Tareas\ModificarTareaCommand.cs" />
     <Compile Include="Tareas\RegistrarTareaCommand.cs" />
     <Compile Include="Turnos\RegistrarTurnoCommand.cs" />
   </ItemGroup>

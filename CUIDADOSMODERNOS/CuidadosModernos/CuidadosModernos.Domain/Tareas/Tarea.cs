@@ -8,6 +8,8 @@ namespace CuidadosModernos.Domain.Tareas
 {
     public class Tarea : Aggregate<int>
     {
+        public string Titulo { get; private set; }
+
         public string Descripcion { get; private set; }
 
         public virtual TimeSpan HoraRealizacion { get; private set; }
@@ -17,6 +19,8 @@ namespace CuidadosModernos.Domain.Tareas
         public virtual DateTime? FechaFinVigencia { get; private set; }
 
         public virtual Frecuencia Frecuencia { get; private set; }
+
+        public bool Activa { get; private set; }
 
         #region ABM
 
@@ -32,6 +36,16 @@ namespace CuidadosModernos.Domain.Tareas
         private void ValidarRegistrar(RegistrarTarea registrarTarea)
         {
             var validaciones = new ValidationException();
+
+            if (string.IsNullOrEmpty(registrarTarea.Titulo))
+            {
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarTarea.Titulo)));
+            }
+
+            if (string.IsNullOrEmpty(registrarTarea.Descripcion))
+            {
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarTarea.Descripcion)));
+            }
 
             if (registrarTarea.HoraRealizacion == null || registrarTarea.HoraRealizacion == default)
             {
@@ -64,8 +78,18 @@ namespace CuidadosModernos.Domain.Tareas
 
         #endregion
 
+        #region Desactivar/Eliminar
+
+        public void Desactivar()
+        {
+            this.Activa = false;
+        }
+
+        #endregion
+
         private void GuardarTarea(RegistrarTarea tarea)
         {
+            this.Titulo = tarea.Titulo;
             this.Descripcion = tarea.Descripcion;
             this.HoraRealizacion = tarea.HoraRealizacion;
             this.FechaInicioVigencia = tarea.FechaInicioVigencia;

@@ -1,14 +1,12 @@
-﻿using Cross.UI.Web.Models;
-
-namespace CuidadosModernos.UI.Web.Models
+﻿namespace CuidadosModernos.Business.Domain.Queries.Empleadas
 {
-    public class EmpleadaDetalleVM : ViewModel
+    public class EmpleadaDataView : DataView
     {
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }
 
-        public string DNI { get; set; }
+        public virtual string DNI { get; set; }
 
         public string Email { get; set; }
 

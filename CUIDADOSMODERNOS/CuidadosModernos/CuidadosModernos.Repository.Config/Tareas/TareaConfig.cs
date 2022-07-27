@@ -12,8 +12,11 @@ namespace CuidadosModernos.Repository.Config.Tareas
 
             this.HasKey(m => m.ID).Property(m => m.ID).HasColumnName("ID_Tarea").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity); ;
 
+            this.Property(m => m.Titulo).IsRequired();
+            this.Property(m => m.Descripcion).IsRequired();
             this.Property(m => m.HoraRealizacion).IsRequired();
             this.Property(m => m.FechaInicioVigencia).IsRequired();
+            this.Property(m => m.Activa).IsRequired();
 
             this.HasRequired(m => m.Frecuencia).WithMany().Map(m => m.MapKey("ID_Frecuencia"));
         }

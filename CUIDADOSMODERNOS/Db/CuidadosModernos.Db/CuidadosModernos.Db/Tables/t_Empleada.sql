@@ -9,6 +9,7 @@
     [Usuario]               VARCHAR(50)         NULL,
     [Password]              VARCHAR(50)         NULL,
     [ID_Encargada]          INT                 NOT NULL,
+    [Activa]                BIT                 NOT NULL DEFAULT 1, 
     CONSTRAINT [PK_t_Empleada] PRIMARY KEY ([ID_Empleada]),
     CONSTRAINT [FK_t_Empleada_t_Encargada] FOREIGN KEY ([ID_Encargada]) REFERENCES [dbo].[t_Encargada]([ID_Encargada])
 )

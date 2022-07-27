@@ -49,6 +49,10 @@
     <Compile Include="Empleadas\EmpleadaResultVM.cs" />
     <Compile Include="Login\LoginVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tareas\TareaDetalleVM.cs" />
+    <Compile Include="Tareas\TareaResultVM.cs" />
+    <Compile Include="Tareas\TareaAdminVM.cs" />
+    <Compile Include="Tareas\TareaFiltroVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.UI.Web.Models\Cross.UI.Web.Models.csproj">

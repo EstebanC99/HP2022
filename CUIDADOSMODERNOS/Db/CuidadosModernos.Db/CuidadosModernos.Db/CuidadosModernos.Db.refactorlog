@@ -175,4 +175,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID_TareaTurno" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="b0955ad0-674a-4f29-afaa-58e308f77f65" ChangeDateTime="07/27/2022 00:20:49">
+    <Property Name="ElementName" Value="[dbo].[t_Tarea].[Actiba]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[t_Tarea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Activa" />
+  </Operation>
 </Operations>

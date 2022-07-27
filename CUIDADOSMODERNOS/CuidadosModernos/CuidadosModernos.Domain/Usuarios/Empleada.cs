@@ -28,6 +28,8 @@ namespace CuidadosModernos.Domain.Usuarios
 
         public virtual Encargada Encargada { get; private set; }
 
+        public bool Activa { get; private set; }
+
         #region ABM
 
         #region Registrar Empleada
@@ -89,12 +91,12 @@ namespace CuidadosModernos.Domain.Usuarios
         {
             var validaciones = new ValidationException();
 
-            if (string.IsNullOrEmpty(modificarEmpleada.Usuario))
+            if (this.Usuario != null && string.IsNullOrEmpty(modificarEmpleada.Usuario))
             {
                 validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Usuario)));
             }
 
-            if (string.IsNullOrEmpty(modificarEmpleada.Password))
+            if (this.Password != null && string.IsNullOrEmpty(modificarEmpleada.Password))
             {
                 validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Password)));
             }
@@ -102,6 +104,13 @@ namespace CuidadosModernos.Domain.Usuarios
             validaciones.Throw();
         }
 
+        #endregion
+
+        #region Eliminar
+        public void EliminarEmpleada()
+        {
+            this.Activa = false;
+        }
         #endregion
 
         private void GuardarEmpleada(RegistrarEmpleada empleada)

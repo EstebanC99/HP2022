@@ -1,6 +1,7 @@
 ﻿using Cross.UI.Web.Api.Controllers;
 using CuidadosModernos.UI.Web.Api.Services.Empleadas;
 using CuidadosModernos.UI.Web.Models;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Http;
 
@@ -12,6 +13,18 @@ namespace CuidadosModernos.UI.Web.Api.Controllers
         public AdministrarEmpleadaController(IAdministrarEmpleadaApiService apiService) : base(apiService)
         {
 
+        }
+
+        [HttpPost]
+        public List<EmpleadaResultVM> GetAll()
+        {
+            return this.ApiService.GetAll();
+        }
+
+        [HttpPost]
+        public EmpleadaDetalleVM GetByID(EmpleadaFiltroVM filtro)
+        {
+            return this.ApiService.GetByID(filtro);
         }
 
         [HttpPost]
@@ -28,9 +41,9 @@ namespace CuidadosModernos.UI.Web.Api.Controllers
         }
 
         [HttpPost]
-        public void Eliminar(EmpleadaDetalleVM empleadaDetalleVM)
+        public void Eliminar(EmpleadaResultVM empleadaVM)
         {
-            this.ApiService.EliminarEmpleada(empleadaDetalleVM);
+            this.ApiService.EliminarEmpleada(empleadaVM);
         }
 
     }

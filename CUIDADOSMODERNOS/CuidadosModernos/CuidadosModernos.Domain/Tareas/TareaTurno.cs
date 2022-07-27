@@ -1,10 +1,11 @@
-﻿using CuidadosModernos.Domain.Horarios;
+﻿using Cross.Business.Domain;
+using CuidadosModernos.Domain.Horarios;
 using CuidadosModernos.Domain.Turnos;
 using System;
 
 namespace CuidadosModernos.Domain.Tareas
 {
-    public class TareaTurno : Entity
+    public class TareaTurno : Aggregate<int>
     {
         public virtual int ID_Turno { get; private set; }
 

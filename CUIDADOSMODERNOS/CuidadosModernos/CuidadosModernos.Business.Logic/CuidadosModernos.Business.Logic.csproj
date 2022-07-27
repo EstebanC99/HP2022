@@ -68,7 +68,7 @@
     <Compile Include="Empleadas\AdministrarEmpleadaLogic.cs" />
     <Compile Include="EntityLoaderLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tareas\RegistrarTareaLogic.cs" />
+    <Compile Include="Tareas\AdministrarTareaLogic.cs" />
     <Compile Include="Turnos\RegistrarTurnoLogic.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +99,10 @@
     <ProjectReference Include="..\CuidadosModernos.Business.Domain.Commands\CuidadosModernos.Business.Domain.Commands.csproj">
       <Project>{72538403-5E57-4FD6-BFB7-AB2AD2A3F62F}</Project>
       <Name>CuidadosModernos.Business.Domain.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuidadosModernos.Business.Domain.Queries\CuidadosModernos.Business.Domain.Queries.csproj">
+      <Project>{B409CD89-D69B-4CAB-AE32-58D82A0D9437}</Project>
+      <Name>CuidadosModernos.Business.Domain.Queries</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuidadosModernos.BusinessService.Interfaces\CuidadosModernos.BusinessService.Interfaces.csproj">
       <Project>{22234ECC-A2E6-40EB-81C9-7D0A857023C9}</Project>

@@ -15,6 +15,7 @@ namespace CuidadosModernos.Repository.Config.Generales
             this.Property(m => m.Nombre).IsRequired();
             this.Property(m => m.Apellido).IsRequired();
             this.Property(m => m.DNI).IsRequired();
+            this.Property(m => m.Activa).IsRequired();
 
             this.HasRequired(m => m.Encargada).WithMany().Map(m => m.MapKey("ID_Encargada"));
         }

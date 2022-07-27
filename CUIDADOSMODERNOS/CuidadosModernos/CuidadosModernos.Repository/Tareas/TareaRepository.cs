@@ -1,6 +1,6 @@
-﻿using CuidadosModernos.Domain.Tareas;
+﻿using CuidadosModernos.Business.Domain.Queries.Tareas;
+using CuidadosModernos.Domain.Tareas;
 using EntityFramework.DbContextScope.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,5 +14,19 @@ namespace CuidadosModernos.Repository
 
         }
 
+        public List<TareaDataView> GetAll()
+        {
+            return this.DbSet.Where(t => t.Activa).ToList().ConvertAll(t => new TareaDataView()
+            {
+                ID = t.ID,
+                Titulo = t.Titulo,
+                Descripcion = t.Descripcion,
+                HoraRealizacion = t.HoraRealizacion,
+                FechaInicioVigencia = t.FechaInicioVigencia,
+                FechaFinVigencia = t.FechaFinVigencia,
+                FrecuenciaID = t.Frecuencia.ID,
+                FrecuenciaDescripcion = t.Frecuencia.Descripcion
+            });
+        }
     }
 }

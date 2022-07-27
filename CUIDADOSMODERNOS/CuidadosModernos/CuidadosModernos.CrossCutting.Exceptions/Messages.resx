@@ -141,4 +141,10 @@
   <data name="NoSeEncontroLaFrecuenciaElegida" xml:space="preserve">
     <value>No se encontro la Frecuencia elegida.</value>
   </data>
+  <data name="NoSeEncontroLaTarea" xml:space="preserve">
+    <value>No se encontró la Tarea seleccionada.</value>
+  </data>
+  <data name="YaSeRegistroUnaEmpleadaConDNIX" xml:space="preserve">
+    <value>Ya se registro una Empleada con DNI: {0}.</value>
+  </data>
 </root>

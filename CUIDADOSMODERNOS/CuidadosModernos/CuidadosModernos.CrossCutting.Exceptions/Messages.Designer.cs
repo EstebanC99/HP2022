@@ -159,12 +159,39 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'No se encontró la Tarea seleccionada.'.
+        /// </summary>
+        public static string NoSeEncontroLaTarea {
+            get {
+                return ResourceManager.GetString(ResourceNames.NoSeEncontroLaTarea, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Ya se registro una Empleada con DNI: {0}.'.
+        /// </summary>
+        public static string YaSeRegistroUnaEmpleadaConDNIX {
+            get {
+                return ResourceManager.GetString(ResourceNames.YaSeRegistroUnaEmpleadaConDNIX, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Formats a localized string similar to 'El campo {0} es requerido.'.
         /// </summary>
         /// <param name="arg0">An object (0) to format.</param>
         /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
         public static string LaPropiedadEsRequeridaFormat(object arg0) {
             return string.Format(_resourceCulture, LaPropiedadEsRequerida, arg0);
+        }
+        
+        /// <summary>
+        /// Formats a localized string similar to 'Ya se registro una Empleada con DNI: {0}.'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string YaSeRegistroUnaEmpleadaConDNIXFormat(object arg0) {
+            return string.Format(_resourceCulture, YaSeRegistroUnaEmpleadaConDNIX, arg0);
         }
         
         /// <summary>
@@ -211,6 +238,16 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             /// Stores the resource name 'NoSeEncontroLaFrecuenciaElegida'.
             /// </summary>
             public const string NoSeEncontroLaFrecuenciaElegida = "NoSeEncontroLaFrecuenciaElegida";
+            
+            /// <summary>
+            /// Stores the resource name 'NoSeEncontroLaTarea'.
+            /// </summary>
+            public const string NoSeEncontroLaTarea = "NoSeEncontroLaTarea";
+            
+            /// <summary>
+            /// Stores the resource name 'YaSeRegistroUnaEmpleadaConDNIX'.
+            /// </summary>
+            public const string YaSeRegistroUnaEmpleadaConDNIX = "YaSeRegistroUnaEmpleadaConDNIX";
         }
     }
 }
