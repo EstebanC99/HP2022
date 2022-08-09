@@ -15,6 +15,8 @@ namespace CuidadosModernos.ResourceAccess.Repository.Config.Tareas
 
             this.HasRequired(m => m.Estado).WithMany().Map(m => m.MapKey("ID_Estado"));
             this.HasRequired(m => m.Tarea).WithMany().Map(m => m.MapKey("ID_Tarea"));
+
+            this.Ignore(m => m.Descripcion);
         }
     }
 }

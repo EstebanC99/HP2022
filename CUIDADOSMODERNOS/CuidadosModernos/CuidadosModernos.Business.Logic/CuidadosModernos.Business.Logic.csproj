@@ -69,7 +69,8 @@
     <Compile Include="EntityLoaderLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\AdministrarTareaLogic.cs" />
-    <Compile Include="Turnos\RegistrarTurnoLogic.cs" />
+    <Compile Include="Turnos\AsignarTareaTurnoLogic.cs" />
+    <Compile Include="Turnos\AdministrarTurnoLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

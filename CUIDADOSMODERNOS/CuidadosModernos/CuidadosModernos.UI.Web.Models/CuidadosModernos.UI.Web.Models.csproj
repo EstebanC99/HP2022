@@ -53,6 +53,9 @@
     <Compile Include="Tareas\TareaResultVM.cs" />
     <Compile Include="Tareas\TareaAdminVM.cs" />
     <Compile Include="Tareas\TareaFiltroVM.cs" />
+    <Compile Include="Turnos\TurnoAdminVM.cs" />
+    <Compile Include="Turnos\TurnoDetalleVM.cs" />
+    <Compile Include="Turnos\TurnoResultVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.UI.Web.Models\Cross.UI.Web.Models.csproj">

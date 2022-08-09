@@ -1,11 +1,14 @@
 ﻿using Cross.Business.Domain;
 using Cross.Crosscutting.Exceptions;
 using CuidadosModernos.CrossCutting.Exceptions;
+using CuidadosModernos.Domain.Factories.Turnos;
+using CuidadosModernos.Domain.Services.Tareas;
 using CuidadosModernos.Domain.Tareas;
 using CuidadosModernos.Domain.Usuarios;
 using CuidadosModernos.Domain.ValueObjects.Turnos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CuidadosModernos.Domain.Horarios
 {
@@ -26,9 +29,9 @@ namespace CuidadosModernos.Domain.Horarios
 
         public virtual DateTime FechaHoraFin { get; private set; }
 
-        public virtual DateTime FechaHoraRealInicio { get; private set; }
+        public virtual DateTime? FechaHoraRealInicio { get; private set; }
 
-        public virtual DateTime FechaHoraRealFin { get; private set; }
+        public virtual DateTime? FechaHoraRealFin { get; private set; }
 
         public virtual Empleada Empleada { get; private set; }
 
@@ -44,7 +47,6 @@ namespace CuidadosModernos.Domain.Horarios
 
             this.FechaHoraInicio = registrarTurno.FechaHoraInicio;
             this.FechaHoraFin = registrarTurno.FechaHoraFin;
-
         }
 
         private void ValidarRegistrar(RegistrarTurno registrarTurno)
@@ -70,5 +72,26 @@ namespace CuidadosModernos.Domain.Horarios
         }
 
         #endregion
+
+        public void AsignarTareas(List<Tarea> tareas,
+                                  ITareaTurnoFactory tareaTurnoFactory)
+        {
+            foreach (var tarea in tareas)
+            {
+                this.Tareas.Add(tareaTurnoFactory.Crear(this, tarea));
+            }
+
+            var tareasEliminar = new List<Tarea>();
+
+            foreach (var tarea in tareas)
+            {
+                if (this.Tareas.Any(t => t.Tarea.ID == tarea.ID && t.Tarea.HoraRealizacion > DateTime.Now.TimeOfDay))
+                {
+                    tareasEliminar.Add(tarea);
+                }
+            }
+
+            this.Tareas.RemoveAll(t => tareasEliminar.Contains(t.Tarea));
+        }
     }
 }

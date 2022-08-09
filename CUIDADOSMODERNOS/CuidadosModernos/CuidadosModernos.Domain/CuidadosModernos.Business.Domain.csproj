@@ -44,9 +44,12 @@
   <ItemGroup>
     <Compile Include="Factories\Tareas\ITareaFactory.cs" />
     <Compile Include="Factories\Tareas\TareaFactory.cs" />
+    <Compile Include="Factories\Turnos\ITareaTurnoFactory.cs" />
     <Compile Include="Factories\Turnos\ITurnoFactory.cs" />
+    <Compile Include="Factories\Turnos\TareaTurnoFactory.cs" />
     <Compile Include="Factories\Turnos\TurnoFactory.cs" />
     <Compile Include="Services\IEntityLoaderDomainService.cs" />
+    <Compile Include="Services\Tareas\IAdministrarTareaDomainService.cs" />
     <Compile Include="Tareas\TareaTurno.cs" />
     <Compile Include="Turnos\EstadoTareaTurno.cs" />
     <Compile Include="Turnos\Nota.cs" />

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CuidadosModernos.BusinessService.Interfaces.Turnos
 {
-    public interface IRegistrarTurnoBusinessService : IBusinessService
+    public interface IAsignarTareaTurnoBusinessService : IBusinessService
     {
-
+        void Asignar();
     }
 }

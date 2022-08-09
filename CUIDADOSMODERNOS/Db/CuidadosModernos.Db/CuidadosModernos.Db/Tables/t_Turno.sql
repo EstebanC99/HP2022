@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[t_Turno]
 (
-	[ID_Turno]                  INT         NOT NULL,
+	[ID_Turno]                  INT         IDENTITY (1, 1) NOT NULL,
     [FechaHoraInicio]           DATETIME    NOT NULL,
     [FechaHoraFin]              DATETIME    NOT NULL, 
-    [FechaHoraRealInicio]       DATETIME    NOT NULL,
-    [FechaHoraRealFin]          DATETIME    NOT NULL, 
+    [FechaHoraRealInicio]       DATETIME    NULL,
+    [FechaHoraRealFin]          DATETIME    NULL, 
     [ID_Empleada]               INT         NOT NULL, 
     [ID_Empleada_Reemplazante]  INT         NULL, 
     CONSTRAINT [FK_t_Turno_t_Empleada] FOREIGN KEY (ID_Empleada) REFERENCES [dbo].[t_Empleada](ID_Empleada),

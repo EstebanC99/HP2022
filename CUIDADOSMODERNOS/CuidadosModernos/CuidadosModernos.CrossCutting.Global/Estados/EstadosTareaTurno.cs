@@ -1,8 +1,8 @@
 ﻿namespace CuidadosModernos.CrossCutting.Global
 {
-    public abstract class EstadosTareaEmpleada
+    public abstract class EstadosTareaTurno
     {
-        public EstadosTareaEmpleada()
+        public EstadosTareaTurno()
         {
 
         }
@@ -13,7 +13,7 @@
 
         public const int RealizadaATiempo = 3;
 
-        public const int RealizadaFueraDeTiempo = 4;
+        public const int RealizadaConRetraso = 4;
 
         public const int Incumplida = 5;
     }

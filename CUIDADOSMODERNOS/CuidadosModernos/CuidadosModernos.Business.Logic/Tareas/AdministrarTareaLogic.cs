@@ -4,8 +4,10 @@ using CuidadosModernos.Business.Domain.Commands.Tareas;
 using CuidadosModernos.Business.Domain.Queries.Tareas;
 using CuidadosModernos.BusinessService.Interfaces;
 using CuidadosModernos.BusinessService.Interfaces.Tareas;
+using CuidadosModernos.BusinessService.Interfaces.Turnos;
 using CuidadosModernos.CrossCutting.Exceptions;
 using CuidadosModernos.Domain.Factories.Tareas;
+using CuidadosModernos.Domain.Services.Tareas;
 using CuidadosModernos.Domain.Tareas;
 using CuidadosModernos.Domain.ValueObjects.Tareas;
 using CuidadosModernos.Repository;
@@ -14,21 +16,25 @@ using System.Collections.Generic;
 
 namespace CuidadosModernos.Business.Logic.Tareas
 {
-    public class AdministrarTareaLogic : BusinessLogic<Tarea, ITareaRepository>, IAdministrarTareaBusinessService
+    public class AdministrarTareaLogic : BusinessLogic<Tarea, ITareaRepository>, IAdministrarTareaBusinessService, IAdministrarTareaDomainService
     {
         private ITareaFactory TareaFactory { get; set; }
 
         private IEntityLoaderBusinessService EntityLoaderBusinessService { get; set; }
 
+        private IAsignarTareaTurnoBusinessService AsignarTareaTurnoBusinessService { get; set; }
+
         public AdministrarTareaLogic(IDbContextScopeFactory dbContextScopeFactory,
                                    Tarea aggregate,
                                    ITareaRepository repository,
                                    ITareaFactory tareaFactory,
-                                   IEntityLoaderBusinessService entityLoaderBusinessService)
+                                   IEntityLoaderBusinessService entityLoaderBusinessService,
+                                   IAsignarTareaTurnoBusinessService asignarTareaTurnoBusinessService)
             : base(dbContextScopeFactory, aggregate, repository)
         {
             this.TareaFactory = tareaFactory;
             this.EntityLoaderBusinessService = entityLoaderBusinessService;
+            this.AsignarTareaTurnoBusinessService = asignarTareaTurnoBusinessService;
         }
 
         public List<TareaDataView> GetAll()
@@ -75,6 +81,8 @@ namespace CuidadosModernos.Business.Logic.Tareas
                 this.Repository.Add(this.Aggregate);
 
                 context.SaveChanges();
+
+                this.AsignarTareaTurnoBusinessService.Asignar();
             }
         }
 
@@ -90,6 +98,8 @@ namespace CuidadosModernos.Business.Logic.Tareas
                 this.Aggregate.Modificar(this.MapearTarea(command));
 
                 context.SaveChanges();
+
+                this.AsignarTareaTurnoBusinessService.Asignar();
             }
         }
 
@@ -105,6 +115,8 @@ namespace CuidadosModernos.Business.Logic.Tareas
                 this.Aggregate.Desactivar();
 
                 context.SaveChanges();
+
+                this.AsignarTareaTurnoBusinessService.Asignar();
             }
         }
 

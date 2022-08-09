@@ -1,7 +1,6 @@
 ﻿using Cross.Business.Logic;
 using CuidadosModernos.Business.Domain.Commands.Turnos;
 using CuidadosModernos.BusinessService.Interfaces;
-using CuidadosModernos.BusinessService.Interfaces.Tareas;
 using CuidadosModernos.BusinessService.Interfaces.Turnos;
 using CuidadosModernos.Domain.Factories.Turnos;
 using CuidadosModernos.Domain.Horarios;
@@ -12,25 +11,23 @@ using EntityFramework.DbContextScope.Interfaces;
 
 namespace CuidadosModernos.Business.Logic.Turnos
 {
-    public class RegistrarTurnoLogic : BusinessLogic<Turno, ITurnoRepository>, IRegistrarTurnoBusinessService
+    public class AdministrarTurnoLogic : BusinessLogic<Turno, ITurnoRepository>, IAdministrarTurnoBusinessService
     {
         private ITurnoFactory TurnoFactory { get; set; }
-
         private IEntityLoaderBusinessService EntityLoaderBusinessService { get; set; }
+        private IAsignarTareaTurnoBusinessService AsignarTareaTurnoBusinessService { get; set; }
 
-        private IAsignarTareaEmpleadaTurnoBusinessService AsignarTareaEmpleadaTurnoBusinessService { get; set; }
-
-        public RegistrarTurnoLogic(IDbContextScopeFactory dbContextScopeFactory,
+        public AdministrarTurnoLogic(IDbContextScopeFactory dbContextScopeFactory,
                                    Turno aggregate,
                                    ITurnoRepository repository,
                                    ITurnoFactory turnoFactory,
                                    IEntityLoaderBusinessService entityLoaderBusinessService,
-                                   IAsignarTareaEmpleadaTurnoBusinessService asignarTareaEmpleadaTurnoBusinessService)
+                                   IAsignarTareaTurnoBusinessService asignarTareaTurnoBusinessService)
             : base(dbContextScopeFactory, aggregate, repository)
         {
             this.TurnoFactory = turnoFactory;
             this.EntityLoaderBusinessService = entityLoaderBusinessService;
-            this.AsignarTareaEmpleadaTurnoBusinessService = asignarTareaEmpleadaTurnoBusinessService;
+            this.AsignarTareaTurnoBusinessService = asignarTareaTurnoBusinessService;
         }
 
         public void RegistrarTurno(RegistrarTurnoCommand command)
@@ -43,10 +40,12 @@ namespace CuidadosModernos.Business.Logic.Turnos
 
                 this.Aggregate.Registrar(registrarTurno);
 
-                this.AsignarTareaEmpleadaTurnoBusinessService.AsignarTarea(this.Aggregate);
+                this.Repository.Add(this.Aggregate);
 
                 context.SaveChanges();
             }
+
+            this.AsignarTareaTurnoBusinessService.Asignar();
         }
 
         private RegistrarTurno MapearRegistrarTurno(RegistrarTurnoCommand command)

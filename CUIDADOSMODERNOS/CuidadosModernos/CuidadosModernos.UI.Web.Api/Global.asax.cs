@@ -32,6 +32,7 @@ namespace CuidadosModernos.UI.Web.Api
             IoCContainer.Instance.Register<IEmpleadaFactory, EmpleadaFactory, IIoCContainer>(IoCContainer.Instance);
             IoCContainer.Instance.Register<ITareaFactory, TareaFactory, IIoCContainer>(IoCContainer.Instance);
             IoCContainer.Instance.Register<ITurnoFactory, TurnoFactory, IIoCContainer>(IoCContainer.Instance);
+            IoCContainer.Instance.Register<ITareaTurnoFactory, TareaTurnoFactory, IIoCContainer>(IoCContainer.Instance);
 
             #endregion
 

@@ -1,5 +1,7 @@
 ﻿using CuidadosModernos.Domain.Horarios;
 using EntityFramework.DbContextScope.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CuidadosModernos.Repository.Turnos
 {
@@ -9,6 +11,11 @@ namespace CuidadosModernos.Repository.Turnos
             : base(ambientDbContextLocator)
         {
 
+        }
+
+        public List<Turno> ObtenerTurnosPorCumplir()
+        {
+            return this.DbSet.Where(t => t.FechaHoraFin >= System.DateTime.Now).ToList();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[t_TareaTurno]
 (
-	[ID_TareaTurno]         INT NOT NULL, 
+	[ID_TareaTurno]         INT IDENTITY (1, 1) NOT NULL, 
     [FechaHoraRealizacion]  DATETIME NULL, 
     [Comentario]            VARBINARY(MAX) NULL, 
     [ID_Estado]             INT NOT NULL, 
