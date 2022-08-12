@@ -168,6 +168,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'Ya existe un usuario creado con nombre de usuario: {0}.'.
+        /// </summary>
+        public static string YaExisteUsuarioConNombreX {
+            get {
+                return ResourceManager.GetString(ResourceNames.YaExisteUsuarioConNombreX, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'Ya se registro una Empleada con DNI: {0}.'.
         /// </summary>
         public static string YaSeRegistroUnaEmpleadaConDNIX {
@@ -183,6 +192,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
         public static string LaPropiedadEsRequeridaFormat(object arg0) {
             return string.Format(_resourceCulture, LaPropiedadEsRequerida, arg0);
+        }
+        
+        /// <summary>
+        /// Formats a localized string similar to 'Ya existe un usuario creado con nombre de usuario: {0}.'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string YaExisteUsuarioConNombreXFormat(object arg0) {
+            return string.Format(_resourceCulture, YaExisteUsuarioConNombreX, arg0);
         }
         
         /// <summary>
@@ -243,6 +261,11 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             /// Stores the resource name 'NoSeEncontroLaTarea'.
             /// </summary>
             public const string NoSeEncontroLaTarea = "NoSeEncontroLaTarea";
+            
+            /// <summary>
+            /// Stores the resource name 'YaExisteUsuarioConNombreX'.
+            /// </summary>
+            public const string YaExisteUsuarioConNombreX = "YaExisteUsuarioConNombreX";
             
             /// <summary>
             /// Stores the resource name 'YaSeRegistroUnaEmpleadaConDNIX'.

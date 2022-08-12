@@ -1,12 +1,14 @@
 ﻿using Cross.Business.Logic;
 using Cross.Crosscutting.Exceptions;
 using CuidadosModernos.Business.Domain.Commands.Empleadas;
+using CuidadosModernos.Business.Domain.Commands.Usuarios;
 using CuidadosModernos.Business.Domain.Queries.Empleadas;
 using CuidadosModernos.BusinessService.Interfaces;
 using CuidadosModernos.BusinessService.Interfaces.Empleadas;
 using CuidadosModernos.CrossCutting.Exceptions;
 using CuidadosModernos.Domain.Encargadas;
 using CuidadosModernos.Domain.Factories.Empledas;
+using CuidadosModernos.Domain.Services;
 using CuidadosModernos.Domain.Usuarios;
 using CuidadosModernos.Domain.ValueObjects.Empleadas;
 using CuidadosModernos.Repository.Empleadas;
@@ -19,18 +21,20 @@ namespace CuidadosModernos.Business.Logic.Empleadas
     public class AdministrarEmpleadaLogic : BusinessLogic<Empleada, IEmpleadaRepository>, IAdministrarEmpleadaBusinessService
     {
         private IEmpleadaFactory EmpleadaFactory { get; set; }
-
         private IEntityLoaderBusinessService EntityLoaderBusinessService { get; set; }
+        private IAdministrarUsuarioDomainService AdministrarUsuarioDomainService { get; set; }
 
         public AdministrarEmpleadaLogic(IDbContextScopeFactory dbContextScopeFactory,
                                         Empleada aggregate,
                                         IEmpleadaRepository repository,
                                         IEmpleadaFactory empleadaFactory,
-                                        IEntityLoaderBusinessService entityLoaderBusinessService)
+                                        IEntityLoaderBusinessService entityLoaderBusinessService,
+                                        IAdministrarUsuarioDomainService administrarUsuarioDomainService)
             : base(dbContextScopeFactory, aggregate, repository)
         {
             this.EmpleadaFactory = empleadaFactory;
             this.EntityLoaderBusinessService = entityLoaderBusinessService;
+            this.AdministrarUsuarioDomainService = administrarUsuarioDomainService;
         }
 
         public List<EmpleadaDataView> GetAll()
@@ -39,14 +43,14 @@ namespace CuidadosModernos.Business.Logic.Empleadas
             {
                 return this.Repository.GetAll();
             }
-        } 
+        }
 
         public EmpleadaDataView GetByID(int empleadaID)
         {
             using (this.DbContextScopeFactory.CreateReadOnly())
             {
                 this.Aggregate = this.Repository.GetByID(empleadaID);
-                
+
                 if (this.Aggregate == null)
                     throw new ValidationException(Messages.NoSeEncontroLaEmpleada);
 
@@ -58,8 +62,8 @@ namespace CuidadosModernos.Business.Logic.Empleadas
                     DNI = this.Aggregate.DNI,
                     Email = this.Aggregate.Email,
                     Telefono = this.Aggregate.Telefono,
-                    Usuario = this.Aggregate.Usuario,
-                    Password = this.Aggregate.Password,
+                    Usuario = this.Aggregate.ObtenerUsuario()?.Username,
+                    Password = this.Aggregate.ObtenerUsuario()?.Password,
                     EncargadaID = this.Aggregate.Encargada.ID,
                     EncargadaNombreApellido = string.Join(" ", this.Aggregate.Encargada.Nombre, this.Aggregate.Encargada.Apellido)
                 };
@@ -76,7 +80,7 @@ namespace CuidadosModernos.Business.Logic.Empleadas
 
                 this.Aggregate = this.EmpleadaFactory.CrearEmpleada();
 
-                this.Aggregate.Registrar(registrarEmpleada);
+                this.Aggregate.Registrar(registrarEmpleada, this.AdministrarUsuarioDomainService);
 
                 this.Repository.Add(this.Aggregate);
 
@@ -86,7 +90,7 @@ namespace CuidadosModernos.Business.Logic.Empleadas
 
         public void ModificarEmpleada(ModificarEmpleadaCommand command)
         {
-            using (var context  = this.DbContextScopeFactory.CreateWithTransaction())
+            using (var context = this.DbContextScopeFactory.CreateWithTransaction())
             {
                 this.Aggregate = this.Repository.GetByID(command.ID);
 
@@ -95,7 +99,7 @@ namespace CuidadosModernos.Business.Logic.Empleadas
                     throw new ValidationException(Messages.NoSeEncontroLaEmpleada);
                 }
 
-                this.Aggregate.Modificar(this.MapearEmpleada(command));
+                this.Aggregate.Modificar(this.MapearEmpleada(command), this.AdministrarUsuarioDomainService);
 
                 context.SaveChanges();
             }

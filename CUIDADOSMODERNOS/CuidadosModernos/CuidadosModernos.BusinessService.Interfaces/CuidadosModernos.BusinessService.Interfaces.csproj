@@ -48,6 +48,7 @@
     <Compile Include="Tareas\IAdministrarTareaBusinessService.cs" />
     <Compile Include="Turnos\IAsignarTareaTurnoBusinessService.cs" />
     <Compile Include="Turnos\IAdministrarTurnoBusinessService.cs" />
+    <Compile Include="Usuarios\IAdministrarUsuarioBusinessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">

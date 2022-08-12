@@ -7,6 +7,8 @@ using Cross.UI.Web.Api.Services;
 using CuidadosModernos.Domain.Factories.Empledas;
 using CuidadosModernos.Domain.Factories.Tareas;
 using CuidadosModernos.Domain.Factories.Turnos;
+using CuidadosModernos.Domain.Factories.Usuarios;
+using CuidadosModernos.Domain.Usuarios.DuplicidadUsuario;
 using CuidadosModernos.Repository;
 using EntityFramework.DbContextScope;
 using EntityFramework.DbContextScope.Interfaces;
@@ -33,6 +35,7 @@ namespace CuidadosModernos.UI.Web.Api
             IoCContainer.Instance.Register<ITareaFactory, TareaFactory, IIoCContainer>(IoCContainer.Instance);
             IoCContainer.Instance.Register<ITurnoFactory, TurnoFactory, IIoCContainer>(IoCContainer.Instance);
             IoCContainer.Instance.Register<ITareaTurnoFactory, TareaTurnoFactory, IIoCContainer>(IoCContainer.Instance);
+            IoCContainer.Instance.Register<IUsuarioFactory, UsuarioFactory, IIoCContainer>(IoCContainer.Instance);
 
             #endregion
 
@@ -49,6 +52,8 @@ namespace CuidadosModernos.UI.Web.Api
             #endregion
 
             #region Register Domain
+
+            IoCContainer.Instance.Register<IDuplicidadUsuario, DuplicidadUsuario>();
 
             #endregion
 

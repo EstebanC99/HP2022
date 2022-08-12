@@ -23,8 +23,8 @@ namespace CuidadosModernos.Repository.Empleadas
                 DNI = e.DNI,
                 Email = e.Email,
                 Telefono = e.Telefono,
-                Usuario = e.Usuario,
-                Password = e.Password,
+                Usuario = e.ObtenerUsuario()?.Username,
+                Password = e.ObtenerUsuario()?.Password,
                 EncargadaID = e.Encargada.ID,
                 EncargadaNombreApellido = string.Join(" ", e.Encargada.Nombre, e.Encargada.Apellido)
             });

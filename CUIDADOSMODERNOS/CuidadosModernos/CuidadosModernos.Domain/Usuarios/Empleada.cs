@@ -2,29 +2,20 @@
 using Cross.Crosscutting.Exceptions;
 using CuidadosModernos.CrossCutting.Exceptions;
 using CuidadosModernos.Domain.Encargadas;
+using CuidadosModernos.Domain.Services;
 using CuidadosModernos.Domain.ValueObjects.Empleadas;
+using System.Collections.Generic;
 
 namespace CuidadosModernos.Domain.Usuarios
 {
-    public class Empleada : Aggregate<int>
+    public class Empleada : Persona
     {
         public Empleada()
         {
+            this.Usuarios = new List<Usuario>();
         }
 
-        public string Nombre { get; private set; }
-
-        public string Apellido { get; private set; }
-
-        public virtual string DNI { get; private set; }
-
         public string Email { get; private set; }
-
-        public string Telefono { get; private set; }
-
-        public string Usuario { get; private set; }
-
-        public string Password { get; private set; }
 
         public virtual Encargada Encargada { get; private set; }
 
@@ -34,11 +25,12 @@ namespace CuidadosModernos.Domain.Usuarios
 
         #region Registrar Empleada
 
-        public void Registrar(RegistrarEmpleada registrarEmpleada)
+        public void Registrar(RegistrarEmpleada registrarEmpleada,
+                              IAdministrarUsuarioDomainService administrarUsuarioDomainService)
         {
             this.ValidarRegistrar(registrarEmpleada);
 
-            this.GuardarEmpleada(registrarEmpleada);
+            this.GuardarEmpleada(registrarEmpleada, administrarUsuarioDomainService);
 
             this.Encargada = registrarEmpleada.Encargada;
         }
@@ -67,6 +59,16 @@ namespace CuidadosModernos.Domain.Usuarios
                 validaciones.AddValidationResult(Messages.MailOTelefonoRequeridos);
             }
 
+            if (string.IsNullOrEmpty(registrarEmpleada.Usuario))
+            {
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarEmpleada.Usuario)));
+            }
+
+            if (string.IsNullOrEmpty(registrarEmpleada.Password))
+            {
+                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(registrarEmpleada.Password)));
+            }
+
             if (registrarEmpleada.Encargada == null)
             {
                 validaciones.AddValidationResult(Messages.NoSeEncontroLaEncargadaParaLaEmpleada);
@@ -79,29 +81,12 @@ namespace CuidadosModernos.Domain.Usuarios
 
         #region Modificar
 
-        public void Modificar(ModificarEmpleada modificarEmpleada)
+        public void Modificar(ModificarEmpleada modificarEmpleada,
+                              IAdministrarUsuarioDomainService administrarUsuarioDomainService)
         {
             this.ValidarRegistrar(modificarEmpleada);
-            this.ValidarModificar(modificarEmpleada);
 
-            this.GuardarEmpleada(modificarEmpleada);
-        }
-
-        private void ValidarModificar(ModificarEmpleada modificarEmpleada)
-        {
-            var validaciones = new ValidationException();
-
-            if (this.Usuario != null && string.IsNullOrEmpty(modificarEmpleada.Usuario))
-            {
-                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Usuario)));
-            }
-
-            if (this.Password != null && string.IsNullOrEmpty(modificarEmpleada.Password))
-            {
-                validaciones.AddValidationResult(Messages.LaPropiedadEsRequeridaFormat(nameof(modificarEmpleada.Password)));
-            }
-
-            validaciones.Throw();
+            this.GuardarEmpleada(modificarEmpleada, administrarUsuarioDomainService);
         }
 
         #endregion
@@ -113,15 +98,16 @@ namespace CuidadosModernos.Domain.Usuarios
         }
         #endregion
 
-        private void GuardarEmpleada(RegistrarEmpleada empleada)
+        private void GuardarEmpleada(RegistrarEmpleada empleada, IAdministrarUsuarioDomainService administrarUsuarioDomainService)
         {
             this.Nombre = empleada.Nombre;
             this.Apellido = empleada.Apellido;
             this.DNI = empleada.DNI;
             this.Email = empleada.Email;
             this.Telefono = empleada.Telefono;
-            this.Usuario = empleada.Usuario;
-            this.Password = empleada.Password;
+            this.Activa = true;
+
+            administrarUsuarioDomainService.RegistrarUsuario(empleada.Usuario, empleada.Password, this);
         }
 
         #endregion

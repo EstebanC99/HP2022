@@ -144,6 +144,9 @@
   <data name="NoSeEncontroLaTarea" xml:space="preserve">
     <value>No se encontró la Tarea seleccionada.</value>
   </data>
+  <data name="YaExisteUsuarioConNombreX" xml:space="preserve">
+    <value>Ya existe un usuario creado con nombre de usuario: {0}.</value>
+  </data>
   <data name="YaSeRegistroUnaEmpleadaConDNIX" xml:space="preserve">
     <value>Ya se registro una Empleada con DNI: {0}.</value>
   </data>

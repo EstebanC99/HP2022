@@ -71,6 +71,8 @@
     <Compile Include="Tareas\AdministrarTareaLogic.cs" />
     <Compile Include="Turnos\AsignarTareaTurnoLogic.cs" />
     <Compile Include="Turnos\AdministrarTurnoLogic.cs" />
+    <Compile Include="Usuarios\AdministrarUsuarioLogic.cs" />
+    <Compile Include="Usuarios\DuplicidadUsuarioDomainService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

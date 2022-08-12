@@ -48,11 +48,17 @@
     <Compile Include="Factories\Turnos\ITurnoFactory.cs" />
     <Compile Include="Factories\Turnos\TareaTurnoFactory.cs" />
     <Compile Include="Factories\Turnos\TurnoFactory.cs" />
+    <Compile Include="Factories\Usuarios\IUsuarioFactory.cs" />
+    <Compile Include="Factories\Usuarios\UsuarioFactory.cs" />
+    <Compile Include="Services\IAdministrarUsuarioDomainService.cs" />
+    <Compile Include="Services\IDuplicidadUsuarioDomainService.cs" />
     <Compile Include="Services\IEntityLoaderDomainService.cs" />
     <Compile Include="Services\Tareas\IAdministrarTareaDomainService.cs" />
     <Compile Include="Tareas\TareaTurno.cs" />
     <Compile Include="Turnos\EstadoTareaTurno.cs" />
     <Compile Include="Turnos\Nota.cs" />
+    <Compile Include="Usuarios\DuplicidadUsuario\DuplicidadUsuario.cs" />
+    <Compile Include="Usuarios\DuplicidadUsuario\IDuplicidadUsuario.cs" />
     <Compile Include="Usuarios\Encargada.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Usuarios\Empleada.cs" />
@@ -63,11 +69,13 @@
     <Compile Include="Tareas\Tarea.cs" />
     <Compile Include="Tareas\Frecuencia.cs" />
     <Compile Include="Usuarios\Persona.cs" />
+    <Compile Include="Usuarios\Usuario.cs" />
     <Compile Include="ValueObjects\Empleadas\ModificarEmpleada.cs" />
     <Compile Include="ValueObjects\Empleadas\RegistrarEmpleada.cs" />
     <Compile Include="ValueObjects\Tareas\ModificarTarea.cs" />
     <Compile Include="ValueObjects\Tareas\RegistrarTarea.cs" />
     <Compile Include="ValueObjects\Turnos\RegistrarTurno.cs" />
+    <Compile Include="ValueObjects\Usuarios\RegistrarUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">

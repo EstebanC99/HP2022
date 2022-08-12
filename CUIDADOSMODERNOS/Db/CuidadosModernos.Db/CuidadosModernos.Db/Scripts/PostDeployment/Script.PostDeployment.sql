@@ -10,5 +10,6 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 :r .\t_EstadoTareaTurno.sql
+:r .\t_Persona.sql
 :r .\t_Encargada.sql
 :r .\t_Frecuencia.sql

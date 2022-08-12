@@ -63,6 +63,8 @@
     <Compile Include="Tareas\TareaConfig.cs" />
     <Compile Include="Tareas\FrecuenciaConfig.cs" />
     <Compile Include="Usuarios\EncargadaConfig.cs" />
+    <Compile Include="Usuarios\PersonaConfig.cs" />
+    <Compile Include="Usuarios\UsuarioConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

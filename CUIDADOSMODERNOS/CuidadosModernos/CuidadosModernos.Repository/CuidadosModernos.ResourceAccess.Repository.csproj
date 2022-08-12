@@ -81,6 +81,8 @@
     <Compile Include="Turnos\ITurnoRepository.cs" />
     <Compile Include="Turnos\TareaTurnoRepository.cs" />
     <Compile Include="Turnos\TurnoRepository.cs" />
+    <Compile Include="Usuarios\IUsuarioRepository.cs" />
+    <Compile Include="Usuarios\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,13 +1,24 @@
-﻿namespace CuidadosModernos.Domain.Usuarios
+﻿using Cross.Business.Domain;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace CuidadosModernos.Domain.Usuarios
 {
-    public abstract class Persona : Entity
+    public abstract class Persona : Aggregate<int>
     {
-        public string Nombre { get; private set; }
+        public virtual string Nombre { get; protected set; }
 
-        public string Apellido { get; private set; }
+        public virtual string Apellido { get; protected set; }
 
-        public string DNI { get; private set; }
+        public virtual string DNI { get; protected set; }
 
-        public string Telefono { get; private set; }
+        public virtual string Telefono { get; protected set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; protected set; }
+
+        public virtual Usuario ObtenerUsuario()
+        {
+            return this.Usuarios.FirstOrDefault(u => u.Activo && !u.FechaBaja.HasValue);
+        }
     }
 }

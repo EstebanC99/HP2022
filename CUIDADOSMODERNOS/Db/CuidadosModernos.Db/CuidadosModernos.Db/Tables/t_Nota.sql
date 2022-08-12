@@ -7,5 +7,5 @@
     [Urgente]               BIT NOT NULL DEFAULT 0, 
     [ID_Empleada]           INT NOT NULL, 
     CONSTRAINT [PK_t_Nota] PRIMARY KEY ([ID_Nota]),
-    CONSTRAINT [FK_t_Nota_t_Empleada] FOREIGN KEY ([ID_Empleada]) REFERENCES [dbo].[t_Empleada]([ID_Empleada])
+    CONSTRAINT [FK_t_Nota_t_Empleada] FOREIGN KEY ([ID_Empleada]) REFERENCES [dbo].[t_Empleada]([ID_Persona])
 )

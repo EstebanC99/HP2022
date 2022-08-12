@@ -48,6 +48,7 @@
     <Compile Include="Tareas\ModificarTareaCommand.cs" />
     <Compile Include="Tareas\RegistrarTareaCommand.cs" />
     <Compile Include="Turnos\RegistrarTurnoCommand.cs" />
+    <Compile Include="Usuarios\RegistrarUsuarioCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">
