@@ -1,7 +1,9 @@
 ﻿using Cross.Business.Domain;
 using Cross.Crosscutting.Exceptions;
 using CuidadosModernos.CrossCutting.Exceptions;
+using CuidadosModernos.CrossCutting.Global;
 using CuidadosModernos.Domain.Factories.Turnos;
+using CuidadosModernos.Domain.Services;
 using CuidadosModernos.Domain.Services.Tareas;
 using CuidadosModernos.Domain.Tareas;
 using CuidadosModernos.Domain.Usuarios;
@@ -93,5 +95,43 @@ namespace CuidadosModernos.Domain.Horarios
 
             this.Tareas.RemoveAll(t => tareasEliminar.Contains(t.Tarea));
         }
+
+        public void RegistrarIngreso(RegistrarIngresoTurno ingreso)
+        {
+            #region Validaciones
+            var validaciones = new ValidationException();
+
+            if (ingreso.Empleada == null)
+                validaciones.AddValidationResult(Messages.NoSeEncontroLaEmpleada);
+
+            validaciones.Throw();
+            #endregion
+
+            #region Setter
+
+            if (this.Empleada.ID != ingreso.Empleada.ID)
+                this.EmpleadaReemplazante = ingreso.Empleada;
+
+            this.FechaHoraRealInicio = ingreso.FechaRealIngreso;
+
+            #endregion
+        }
+
+        public void FinalizarTurno(DateTime fechaFin,
+                                   IEntityLoaderDomainService entityLoaderDomainService)
+        {
+            foreach (var tareaTurno in this.ObtenerTareasSinRealizar())
+            {
+                tareaTurno.MarcarIncumplida(entityLoaderDomainService);
+            }
+
+            this.FechaHoraRealFin = fechaFin;
+        }
+
+        private List<TareaTurno> ObtenerTareasSinRealizar()
+        {
+            return this.Tareas.Where(t => t.Estado.ID == EstadosTareaTurno.Asignada).ToList();
+        }
+
     }
 }

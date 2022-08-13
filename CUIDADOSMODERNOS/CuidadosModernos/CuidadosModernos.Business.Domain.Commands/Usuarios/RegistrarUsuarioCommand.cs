@@ -9,5 +9,7 @@ namespace CuidadosModernos.Business.Domain.Commands.Usuarios
         public string Password { get; set; }
 
         public int PersonaID { get; set; }
+
+        public int RolID { get; set; }
     }
 }

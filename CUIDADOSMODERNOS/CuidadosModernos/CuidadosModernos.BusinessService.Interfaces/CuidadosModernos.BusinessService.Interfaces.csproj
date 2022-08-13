@@ -44,10 +44,12 @@
     <Compile Include="Empleadas\IAdministrarEmpleadaBusinessService.cs" />
     <Compile Include="IBasicBusinessService.cs" />
     <Compile Include="IEntityLoaderBusinessService.cs" />
+    <Compile Include="Login\ILoginBusinessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\IAdministrarTareaBusinessService.cs" />
     <Compile Include="Turnos\IAsignarTareaTurnoBusinessService.cs" />
     <Compile Include="Turnos\IAdministrarTurnoBusinessService.cs" />
+    <Compile Include="Turnos\IRegistrarIngresoTurnoBusinessService.cs" />
     <Compile Include="Usuarios\IAdministrarUsuarioBusinessService.cs" />
   </ItemGroup>
   <ItemGroup>

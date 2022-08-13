@@ -48,6 +48,7 @@
     <Compile Include="Empleadas\EmpleadaFiltroVM.cs" />
     <Compile Include="Empleadas\EmpleadaResultVM.cs" />
     <Compile Include="Login\LoginVM.cs" />
+    <Compile Include="Login\UsuarioVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\TareaDetalleVM.cs" />
     <Compile Include="Tareas\TareaResultVM.cs" />

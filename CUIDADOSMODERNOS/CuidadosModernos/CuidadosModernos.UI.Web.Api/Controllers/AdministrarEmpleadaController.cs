@@ -1,4 +1,5 @@
 ﻿using Cross.UI.Web.Api.Controllers;
+using CuidadosModernos.CrossCutting.Global.Roles;
 using CuidadosModernos.UI.Web.Api.Services.Empleadas;
 using CuidadosModernos.UI.Web.Models;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Web.Http;
 
 namespace CuidadosModernos.UI.Web.Api.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = nameof(Roles.Encargada))]
     public class AdministrarEmpleadaController : ApiControllerBase<IAdministrarEmpleadaApiService>
     {
         public AdministrarEmpleadaController(IAdministrarEmpleadaApiService apiService) : base(apiService)

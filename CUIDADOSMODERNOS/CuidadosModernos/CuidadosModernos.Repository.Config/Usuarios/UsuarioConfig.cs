@@ -17,6 +17,8 @@ namespace CuidadosModernos.ResourceAccess.Repository.Config.Usuarios
             this.Property(m => m.Password).IsRequired();
             this.Property(m => m.FechaAlta).IsRequired();
             this.Property(m => m.FechaBaja).IsOptional();
+
+            this.HasRequired(m => m.Rol).WithMany().Map(m => m.MapKey("ID_RolUsuario"));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using CuidadosModernos.Domain.Horarios;
+﻿using CuidadosModernos.CrossCutting.Global;
+using CuidadosModernos.Domain.Horarios;
+using CuidadosModernos.Domain.Services;
 using CuidadosModernos.Domain.Turnos;
 using System;
 
@@ -28,6 +30,11 @@ namespace CuidadosModernos.Domain.Tareas
             this.Turno = turno;
             this.Tarea = tarea;
             this.Estado = estado;
+        }
+
+        public void MarcarIncumplida(IEntityLoaderDomainService entityLoaderDomainService)
+        {
+            this.Estado = entityLoaderDomainService.GetByID<EstadoTareaTurno>(EstadosTareaTurno.Incumplida);
         }
     }
 }

@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Empleadas\IAdministrarEmpleadaApiService.cs" />
     <Compile Include="Empleadas\AdministrarEmpleadaApiService.cs" />
+    <Compile Include="Login\ILoginApiService.cs" />
+    <Compile Include="Login\LoginApiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\AdministrarTareaApiService.cs" />
     <Compile Include="Tareas\IAdministrarTareaApiService.cs" />

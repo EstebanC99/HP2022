@@ -7,7 +7,7 @@ namespace Cross.UI.Web.Api
 {
     public static class TokenGenerator
     {
-        public static string GenerateTokenJwt(string username)
+        public static string GenerateTokenJwt(string username, int userID, string rol)
         {
             // appsetting for Token JWT
             var secretKey = ConfigurationManager.AppSettings["JWT_SECRET_KEY"];
@@ -19,7 +19,12 @@ namespace Cross.UI.Web.Api
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
             // create a claimsIdentity
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) });
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[] 
+            { 
+                new Claim(ClaimTypes.Name, username), 
+                new Claim(ClaimTypes.NameIdentifier, userID.ToString()),
+                new Claim(ClaimTypes.Role, rol)
+            });
 
             // create token to the user
             var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();

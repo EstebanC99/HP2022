@@ -132,6 +132,9 @@
   <data name="MailOTelefonoRequeridos" xml:space="preserve">
     <value>Es requerido un Mail o Telefono.</value>
   </data>
+  <data name="NoHayTurnosPorCumplir" xml:space="preserve">
+    <value>No hay ningun Turno por cumplir.</value>
+  </data>
   <data name="NoSeEncontroLaEmpleada" xml:space="preserve">
     <value>La Empleada seleccionada no pudo encontrarse.</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="NoSeEncontroLaTarea" xml:space="preserve">
     <value>No se encontró la Tarea seleccionada.</value>
+  </data>
+  <data name="UsuarioOContraseniaIncorrectos" xml:space="preserve">
+    <value>Usuario o contraseña incorrectos.</value>
   </data>
   <data name="YaExisteUsuarioConNombreX" xml:space="preserve">
     <value>Ya existe un usuario creado con nombre de usuario: {0}.</value>

@@ -47,6 +47,7 @@
     <Compile Include="Tareas\AsignarTareaEmpleadaCommand.cs" />
     <Compile Include="Tareas\ModificarTareaCommand.cs" />
     <Compile Include="Tareas\RegistrarTareaCommand.cs" />
+    <Compile Include="Turnos\RegistrarIngresoTurnoCommand.cs" />
     <Compile Include="Turnos\RegistrarTurnoCommand.cs" />
     <Compile Include="Usuarios\RegistrarUsuarioCommand.cs" />
   </ItemGroup>

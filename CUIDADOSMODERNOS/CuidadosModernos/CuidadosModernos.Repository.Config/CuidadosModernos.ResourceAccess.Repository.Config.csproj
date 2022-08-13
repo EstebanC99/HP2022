@@ -64,6 +64,7 @@
     <Compile Include="Tareas\FrecuenciaConfig.cs" />
     <Compile Include="Usuarios\EncargadaConfig.cs" />
     <Compile Include="Usuarios\PersonaConfig.cs" />
+    <Compile Include="Usuarios\Rol\RolUsuarioConfig.cs" />
     <Compile Include="Usuarios\UsuarioConfig.cs" />
   </ItemGroup>
   <ItemGroup>

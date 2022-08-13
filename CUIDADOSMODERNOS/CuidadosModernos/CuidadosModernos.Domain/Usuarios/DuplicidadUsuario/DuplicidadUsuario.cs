@@ -18,7 +18,7 @@ namespace CuidadosModernos.Domain.Usuarios.DuplicidadUsuario
         {
             var usuarioExistente = this.DuplicidadUsuarioDomainService.ExisteUsuario(usuario.Username);
 
-            if (usuarioExistente != null)
+            if (usuarioExistente != null && usuarioExistente.Persona.ID != usuario.Persona.ID)
                 throw new ValidationException(Messages.YaExisteUsuarioConNombreXFormat(usuario.Username));
         }
     }

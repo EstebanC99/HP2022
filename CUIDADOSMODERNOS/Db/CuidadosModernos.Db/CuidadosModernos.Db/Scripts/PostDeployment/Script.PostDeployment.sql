@@ -9,7 +9,9 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+:r .\t_RolUsuario.sql
 :r .\t_EstadoTareaTurno.sql
 :r .\t_Persona.sql
 :r .\t_Encargada.sql
+:r .\t_Usuario.sql
 :r .\t_Frecuencia.sql

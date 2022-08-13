@@ -17,6 +17,5 @@ namespace CuidadosModernos.ResourceAccess.Repository.Usuarios
         {
             return this.DbSet.Where(u => u.Username == username && u.Activo).FirstOrDefault();
         }
-
     }
 }

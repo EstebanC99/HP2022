@@ -82,6 +82,8 @@
     <Compile Include="Turnos\TareaTurnoRepository.cs" />
     <Compile Include="Turnos\TurnoRepository.cs" />
     <Compile Include="Usuarios\IUsuarioRepository.cs" />
+    <Compile Include="Usuarios\Login\ILoginUsuarioRepository.cs" />
+    <Compile Include="Usuarios\Login\LoginUsuarioRepository.cs" />
     <Compile Include="Usuarios\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>

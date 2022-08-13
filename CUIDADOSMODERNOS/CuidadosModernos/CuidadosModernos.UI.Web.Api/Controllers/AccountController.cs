@@ -1,13 +1,15 @@
 ﻿using Cross.UI.Web.Api;
+using Cross.UI.Web.Api.Controllers;
+using CuidadosModernos.UI.Web.Api.Services.Login;
 using CuidadosModernos.UI.Web.Models;
 using System.Web.Http;
 
 namespace CuidadosModernos.UI.Web.Api.Controllers
 {
     [AllowAnonymous]
-    public class AccountController : ApiController
+    public class AccountController : ApiControllerBase<ILoginApiService>
     {
-        public AccountController()
+        public AccountController(ILoginApiService apiService) : base(apiService)
         {
 
         }
@@ -18,9 +20,11 @@ namespace CuidadosModernos.UI.Web.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (login.Password == "1234")
+            var usuarioVM = this.ApiService.Ingresar(login);
+
+            if (usuarioVM != null)
             {
-                var token = TokenGenerator.GenerateTokenJwt(login.Username);
+                var token = TokenGenerator.GenerateTokenJwt(usuarioVM.Username, usuarioVM.ID, usuarioVM.Rol);
                 return Ok(token);
             }
 

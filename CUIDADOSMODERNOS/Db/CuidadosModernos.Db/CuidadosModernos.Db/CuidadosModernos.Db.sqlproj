@@ -73,6 +73,7 @@
     <Build Include="Tables\t_TareaTurno.sql" />
     <Build Include="Tables\t_Usuario.sql" />
     <Build Include="Tables\t_Persona.sql" />
+    <Build Include="Tables\t_RolUsuario.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="CuidadosModernos.Db.refactorlog" />
@@ -84,5 +85,7 @@
   <ItemGroup>
     <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
     <None Include="Scripts\PostDeployment\t_Encargada.sql" />
+    <None Include="Scripts\PostDeployment\t_Usuario.sql" />
+    <None Include="Scripts\PostDeployment\t_RolUsuario.sql" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿using Cross.Business.Domain;
-using Cross.Crosscutting.Exceptions;
+﻿using Cross.Crosscutting.Exceptions;
 using CuidadosModernos.CrossCutting.Exceptions;
 using CuidadosModernos.Domain.Encargadas;
 using CuidadosModernos.Domain.Services;
@@ -30,7 +29,7 @@ namespace CuidadosModernos.Domain.Usuarios
         {
             this.ValidarRegistrar(registrarEmpleada);
 
-            this.GuardarEmpleada(registrarEmpleada, administrarUsuarioDomainService);
+            this.GuardarEmpleada(registrarEmpleada, administrarUsuarioDomainService, false);
 
             this.Encargada = registrarEmpleada.Encargada;
         }
@@ -86,7 +85,7 @@ namespace CuidadosModernos.Domain.Usuarios
         {
             this.ValidarRegistrar(modificarEmpleada);
 
-            this.GuardarEmpleada(modificarEmpleada, administrarUsuarioDomainService);
+            this.GuardarEmpleada(modificarEmpleada, administrarUsuarioDomainService, true);
         }
 
         #endregion
@@ -98,7 +97,9 @@ namespace CuidadosModernos.Domain.Usuarios
         }
         #endregion
 
-        private void GuardarEmpleada(RegistrarEmpleada empleada, IAdministrarUsuarioDomainService administrarUsuarioDomainService)
+        private void GuardarEmpleada(RegistrarEmpleada empleada, 
+                                     IAdministrarUsuarioDomainService administrarUsuarioDomainService,
+                                     bool esModificacion)
         {
             this.Nombre = empleada.Nombre;
             this.Apellido = empleada.Apellido;
@@ -107,7 +108,7 @@ namespace CuidadosModernos.Domain.Usuarios
             this.Telefono = empleada.Telefono;
             this.Activa = true;
 
-            administrarUsuarioDomainService.RegistrarUsuario(empleada.Usuario, empleada.Password, this);
+            administrarUsuarioDomainService.RegistrarUsuario(empleada.Usuario, empleada.Password, this, empleada.RolUsuario, esModificacion);
         }
 
         #endregion

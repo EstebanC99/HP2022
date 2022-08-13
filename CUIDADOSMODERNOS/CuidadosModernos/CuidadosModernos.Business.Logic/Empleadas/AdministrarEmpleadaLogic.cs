@@ -6,10 +6,12 @@ using CuidadosModernos.Business.Domain.Queries.Empleadas;
 using CuidadosModernos.BusinessService.Interfaces;
 using CuidadosModernos.BusinessService.Interfaces.Empleadas;
 using CuidadosModernos.CrossCutting.Exceptions;
+using CuidadosModernos.CrossCutting.Global.Roles;
 using CuidadosModernos.Domain.Encargadas;
 using CuidadosModernos.Domain.Factories.Empledas;
 using CuidadosModernos.Domain.Services;
 using CuidadosModernos.Domain.Usuarios;
+using CuidadosModernos.Domain.Usuarios.Rol;
 using CuidadosModernos.Domain.ValueObjects.Empleadas;
 using CuidadosModernos.Repository.Empleadas;
 using EntityFramework.DbContextScope.Interfaces;
@@ -147,6 +149,7 @@ namespace CuidadosModernos.Business.Logic.Empleadas
             registrarEmpleada.Password = command.Password;
 
             registrarEmpleada.Encargada = this.EntityLoaderBusinessService.GetByID<Encargada>(command.EncargadaID);
+            registrarEmpleada.RolUsuario = this.EntityLoaderBusinessService.GetByID<RolUsuario>(Roles.Empleada);
 
             return registrarEmpleada;
         }

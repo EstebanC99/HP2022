@@ -69,11 +69,13 @@
     <Compile Include="Tareas\Tarea.cs" />
     <Compile Include="Tareas\Frecuencia.cs" />
     <Compile Include="Usuarios\Persona.cs" />
+    <Compile Include="Usuarios\Rol\RolUsuario.cs" />
     <Compile Include="Usuarios\Usuario.cs" />
     <Compile Include="ValueObjects\Empleadas\ModificarEmpleada.cs" />
     <Compile Include="ValueObjects\Empleadas\RegistrarEmpleada.cs" />
     <Compile Include="ValueObjects\Tareas\ModificarTarea.cs" />
     <Compile Include="ValueObjects\Tareas\RegistrarTarea.cs" />
+    <Compile Include="ValueObjects\Turnos\RegistrarIngresoTurno.cs" />
     <Compile Include="ValueObjects\Turnos\RegistrarTurno.cs" />
     <Compile Include="ValueObjects\Usuarios\RegistrarUsuario.cs" />
   </ItemGroup>

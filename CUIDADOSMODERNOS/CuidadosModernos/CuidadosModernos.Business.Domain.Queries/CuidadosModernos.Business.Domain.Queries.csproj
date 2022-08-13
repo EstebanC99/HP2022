@@ -45,6 +45,8 @@
     <Compile Include="Empleadas\EmpleadaDataView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\TareaDataView.cs" />
+    <Compile Include="Usuarios\UsuarioCriteria.cs" />
+    <Compile Include="Usuarios\UsuarioDataView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cross.Business.Domain\Cross.Business.Domain.csproj">

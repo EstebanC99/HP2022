@@ -132,6 +132,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         }
         
         /// <summary>
+        /// Looks up a localized string similar to 'No hay ningun Turno por cumplir.'.
+        /// </summary>
+        public static string NoHayTurnosPorCumplir {
+            get {
+                return ResourceManager.GetString(ResourceNames.NoHayTurnosPorCumplir, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Looks up a localized string similar to 'La Empleada seleccionada no pudo encontrarse.'.
         /// </summary>
         public static string NoSeEncontroLaEmpleada {
@@ -164,6 +173,15 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
         public static string NoSeEncontroLaTarea {
             get {
                 return ResourceManager.GetString(ResourceNames.NoSeEncontroLaTarea, _resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to 'Usuario o contraseña incorrectos.'.
+        /// </summary>
+        public static string UsuarioOContraseniaIncorrectos {
+            get {
+                return ResourceManager.GetString(ResourceNames.UsuarioOContraseniaIncorrectos, _resourceCulture);
             }
         }
         
@@ -243,6 +261,11 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             public const string MailOTelefonoRequeridos = "MailOTelefonoRequeridos";
             
             /// <summary>
+            /// Stores the resource name 'NoHayTurnosPorCumplir'.
+            /// </summary>
+            public const string NoHayTurnosPorCumplir = "NoHayTurnosPorCumplir";
+            
+            /// <summary>
             /// Stores the resource name 'NoSeEncontroLaEmpleada'.
             /// </summary>
             public const string NoSeEncontroLaEmpleada = "NoSeEncontroLaEmpleada";
@@ -261,6 +284,11 @@ namespace CuidadosModernos.CrossCutting.Exceptions {
             /// Stores the resource name 'NoSeEncontroLaTarea'.
             /// </summary>
             public const string NoSeEncontroLaTarea = "NoSeEncontroLaTarea";
+            
+            /// <summary>
+            /// Stores the resource name 'UsuarioOContraseniaIncorrectos'.
+            /// </summary>
+            public const string UsuarioOContraseniaIncorrectos = "UsuarioOContraseniaIncorrectos";
             
             /// <summary>
             /// Stores the resource name 'YaExisteUsuarioConNombreX'.

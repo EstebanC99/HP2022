@@ -1,5 +1,6 @@
 ﻿using Cross.Business.Domain;
 using CuidadosModernos.Domain.Encargadas;
+using CuidadosModernos.Domain.Usuarios.Rol;
 
 namespace CuidadosModernos.Domain.ValueObjects.Empleadas
 {
@@ -20,5 +21,7 @@ namespace CuidadosModernos.Domain.ValueObjects.Empleadas
         public virtual string Password { get; set; }
 
         public virtual Encargada Encargada { get; set; }
+
+        public virtual RolUsuario RolUsuario { get; set; }
     }
 }
