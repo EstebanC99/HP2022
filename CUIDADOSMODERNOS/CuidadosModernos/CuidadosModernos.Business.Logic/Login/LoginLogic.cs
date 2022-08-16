@@ -35,6 +35,8 @@ namespace CuidadosModernos.Business.Logic.Login
 
                 this.RegistrarIngresoEmpleada(usuario);
 
+                context.SaveChanges();
+
                 return new UsuarioDataView()
                 {
                     ID = usuario.ID,
